@@ -1,29 +1,20 @@
+import { readFileSync } from "fs";
+import path from "path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { ARTICLES } from "@/lib/articles";
+import { useMDXComponents } from "@/mdx-components";
 
-/* ─── Static content map ────────────────────────────────────────────
-   Explicit imports so bundlers (Webpack & Turbopack) can trace them.
-──────────────────────────────────────────────────────────────────── */
-
-const CONTENT: Record<string, () => Promise<{ default: React.ComponentType }>> = {
-  "software-development-is-changing":
-    () => import("@/content/writing/software-development-is-changing.mdx"),
-  "ai-doesnt-replace-engineers-it-multiplies-them":
-    () => import("@/content/writing/ai-doesnt-replace-engineers-it-multiplies-them.mdx"),
-  "why-understanding-systems-matters-more-than-tools":
-    () => import("@/content/writing/why-understanding-systems-matters-more-than-tools.mdx"),
-  "writing-compounds":
-    () => import("@/content/writing/writing-compounds.mdx"),
-  "human-ai-collaboration-and-the-future-of-work":
-    () => import("@/content/writing/human-ai-collaboration-and-the-future-of-work.mdx"),
-};
+// useMDXComponents is a Next.js MDX convention, not a React hook.
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const mdxComponents = useMDXComponents({});
 
 /* ─── Static params ─────────────────────────────────────────────────── */
 
 export function generateStaticParams() {
-  return Object.keys(CONTENT).map((slug) => ({ slug }));
+  return ARTICLES.map((a) => ({ slug: a.slug }));
 }
 
 /* ─── Metadata ──────────────────────────────────────────────────────── */
@@ -47,10 +38,21 @@ export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
 
   const article = ARTICLES.find((a) => a.slug === slug);
-  const loader  = CONTENT[slug];
-  if (!article || !loader) notFound();
+  if (!article) notFound();
 
-  const { default: Content } = await loader();
+  /* Read MDX file from the filesystem — no webpack loader needed */
+  const filePath = path.join(
+    process.cwd(),
+    "content/writing",
+    `${slug}.mdx`
+  );
+
+  let source: string;
+  try {
+    source = readFileSync(filePath, "utf-8");
+  } catch {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen bg-background px-6 py-24 md:py-32">
@@ -86,7 +88,11 @@ export default async function ArticlePage({ params }: Props) {
 
       {/* MDX content */}
       <article className="mx-auto mt-12 max-w-[700px]">
-        <Content />
+        <MDXRemote
+          source={source}
+          components={mdxComponents}
+          options={{ parseFrontmatter: true }}
+        />
       </article>
 
     </div>
