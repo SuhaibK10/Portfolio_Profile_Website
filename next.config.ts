@@ -1,21 +1,19 @@
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
-/**
- * With `experimental.mdxRs: true`, Turbopack compiles .mdx files using
- * the native Rust-based MDX compiler — no webpack loader needed.
- *
- * The `@next/mdx` withMDX() wrapper only adds webpack loader rules, which
- * Turbopack rejects with "loader undefined … does not have serializable
- * options". Removing the wrapper eliminates that error entirely.
- *
- * Production builds (`next build`) also use the mdxRs compiler when the
- * experimental flag is present, so no webpack fallback is required.
- */
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   experimental: {
+    // Activates the Rust-based MDX compiler for Turbopack (dev).
+    // For webpack (production), withMDX() below handles the loader instead.
     mdxRs: true,
   },
 };
 
-export default nextConfig;
+// withMDX() injects webpack loader rules that Turbopack cannot serialize,
+// causing "loader undefined for match" errors in dev. NEXT_MDX_RS=1 is set
+// by the dev script so we know to skip withMDX() and rely on mdxRs alone.
+const withMDX = createMDX({});
+const isTurbopack = Boolean(process.env.NEXT_MDX_RS);
+
+export default isTurbopack ? nextConfig : withMDX(nextConfig);
