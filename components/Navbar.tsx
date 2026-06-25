@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { AmbientPlayer } from "@/components/AmbientPlayer";
 
 const NAV_LINKS = [
@@ -16,16 +15,14 @@ const NAV_LINKS = [
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 export function Navbar() {
-  const [menuOpen,  setMenuOpen]  = useState(false);
-  const [scrolled,  setScrolled]  = useState(false);
+  const [menuOpen,   setMenuOpen]   = useState(false);
   const [navVisible, setNavVisible] = useState(true);
   const lastYRef = useRef(0);
 
-  /* ── Scroll: auto-hide on down, reveal on up ── */
+  /* ── Auto-hide on scroll down, reveal on scroll up ── */
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 24);
       setNavVisible(y < 80 || y < lastYRef.current);
       lastYRef.current = y;
     };
@@ -33,12 +30,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* ── Always show navbar when mobile menu is open ── */
   useEffect(() => {
     if (menuOpen) setNavVisible(true);
   }, [menuOpen]);
 
-  /* ── Close menu when viewport widens to desktop ── */
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setMenuOpen(false);
@@ -47,13 +42,11 @@ export function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  /* ── Lock body scroll while menu is open ── */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  /* ── Escape closes the menu ── */
   useEffect(() => {
     if (!menuOpen) return;
     const handler = (e: KeyboardEvent) => {
@@ -65,20 +58,22 @@ export function Navbar() {
 
   return (
     <>
-      {/* ─── Fixed header bar ──────────────────────────────────────────── */}
-      <motion.header
-        animate={{ y: navVisible ? 0 : -64 }}
-        transition={{ duration: 0.28, ease: EASE }}
-        className={cn(
-          "fixed inset-x-0 top-0 z-40 flex h-14 items-center",
-          "transition-[background-color,border-color] duration-300",
-          scrolled
-            ? "border-b border-border/20 bg-background/85 backdrop-blur-md"
-            : "bg-transparent"
-        )}
-      >
-        <div className="mx-auto flex w-full max-w-7xl items-center
-                        justify-between px-5 sm:px-8">
+      {/* ─── Fixed centering wrapper (invisible) ────────────────────────── */}
+      {/* pointer-events-none so the transparent area around the pill is
+          click-through; restored on the pill itself */}
+      <div className="fixed inset-x-0 top-5 z-40 flex justify-center
+                      pointer-events-none px-5">
+
+        {/* ─── Floating pill ────────────────────────────────────────────── */}
+        <motion.header
+          animate={{ y: navVisible ? 0 : -72, opacity: navVisible ? 1 : 0 }}
+          transition={{ duration: 0.3, ease: EASE }}
+          className="pointer-events-auto flex h-11 w-full max-w-[680px]
+                     items-center justify-between
+                     rounded-full border border-white/[0.08]
+                     bg-[#0D1117]/85 px-3 backdrop-blur-xl
+                     shadow-[0_4px_32px_rgba(0,0,0,0.35)]"
+        >
 
           {/* Logo */}
           <a
@@ -88,41 +83,43 @@ export function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             aria-label="Back to top"
-            className="font-mono text-sm font-medium tracking-widest
-                       text-muted/45 transition-colors duration-200
-                       hover:text-foreground/80"
+            className="flex-shrink-0 rounded-full px-2 py-1
+                       font-mono text-sm font-semibold tracking-wider
+                       text-foreground/75 transition-colors duration-200
+                       hover:text-foreground"
           >
-            SK
+            SK.
           </a>
 
           {/* Desktop nav links */}
           <nav
-            className="hidden md:flex items-center gap-8"
+            className="hidden md:flex items-center gap-6"
             aria-label="Main navigation"
           >
             {NAV_LINKS.map(({ label, href }) => (
               <a
                 key={href}
                 href={href}
-                className="font-body text-[0.8125rem] text-muted/60
-                           transition-colors duration-200 hover:text-foreground"
+                className="font-body text-[0.8125rem] text-muted/55
+                           transition-colors duration-200 hover:text-foreground/90"
               >
                 {label}
               </a>
             ))}
           </nav>
 
-          {/* Right: ambient player + hamburger */}
-          <div className="flex items-center gap-1">
+          {/* Right controls */}
+          <div className="flex flex-shrink-0 items-center gap-0.5">
             <AmbientPlayer className="relative" />
 
+            {/* Hamburger — mobile only */}
             <button
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               className="md:hidden flex h-8 w-8 items-center justify-center
-                         rounded-lg text-muted/55 transition-colors duration-200
+                         rounded-full text-muted/55 transition-colors duration-200
                          hover:text-foreground focus-visible:outline-none
                          focus-visible:ring-2 focus-visible:ring-gold/40"
             >
@@ -136,7 +133,7 @@ export function Navbar() {
                     transition={{ duration: 0.18 }}
                     className="flex items-center justify-center"
                   >
-                    <X size={17} strokeWidth={1.4} />
+                    <X size={16} strokeWidth={1.4} />
                   </motion.span>
                 ) : (
                   <motion.span
@@ -147,17 +144,17 @@ export function Navbar() {
                     transition={{ duration: 0.18 }}
                     className="flex items-center justify-center"
                   >
-                    <Menu size={17} strokeWidth={1.4} />
+                    <Menu size={16} strokeWidth={1.4} />
                   </motion.span>
                 )}
               </AnimatePresence>
             </button>
           </div>
 
-        </div>
-      </motion.header>
+        </motion.header>
+      </div>
 
-      {/* ─── Mobile menu overlay ────────────────────────────────────────── */}
+      {/* ─── Mobile menu overlay ─────────────────────────────────────────── */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -172,7 +169,6 @@ export function Navbar() {
             className="fixed inset-0 z-30 flex flex-col md:hidden"
             style={{ background: "rgba(13,17,23,0.97)", backdropFilter: "blur(8px)" }}
           >
-            {/* Nav links — centered vertically */}
             <nav className="flex flex-1 flex-col items-center justify-center gap-1">
               {NAV_LINKS.map(({ label, href }, i) => (
                 <motion.a
@@ -198,7 +194,6 @@ export function Navbar() {
               ))}
             </nav>
 
-            {/* Minimal footer stamp */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
