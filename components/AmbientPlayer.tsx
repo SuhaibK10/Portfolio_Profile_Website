@@ -163,10 +163,47 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
   const stopRef   = useRef<(() => void) | null>(null);
   const wrapRef   = useRef<HTMLDivElement>(null);
 
-  /* ── Restore saved preference on mount (never autoplay) ── */
+  /* ── Autoplay piano on first user interaction ── */
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY) as Mode | null;
-    if (saved) setSelected(saved);
+
+    // If user previously set it to "off", respect that
+    if (saved === "off") {
+      setSelected("off");
+      return;
+    }
+
+    // Use saved preference or default to piano
+    const mode: Mode = (saved as Mode) ?? "piano";
+    setSelected(mode);
+
+    function startOnInteraction() {
+      cleanup(); // remove listeners immediately (one-time)
+
+      const ctx  = new AudioContext();
+      ctxRef.current = ctx;
+
+      const dest = ctx.createGain();
+      dest.gain.value = 1;
+      dest.connect(ctx.destination);
+      destRef.current = dest;
+
+      if (mode === "rain")   stopRef.current = startRain(ctx, dest);
+      if (mode === "piano")  stopRef.current = startPiano(ctx, dest);
+      if (mode === "coffee") stopRef.current = startCoffee(ctx, dest);
+      setIsPlaying(true);
+    }
+
+    const events = ["click", "touchstart", "keydown", "scroll"] as const;
+    function cleanup() {
+      events.forEach((e) => document.removeEventListener(e, startOnInteraction));
+    }
+    events.forEach((e) =>
+      document.addEventListener(e, startOnInteraction, { once: true, passive: true })
+    );
+
+    return cleanup;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* ── Close dropdown on outside click ── */
