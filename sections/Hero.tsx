@@ -168,9 +168,14 @@ export function Hero() {
             {...fadeUp(0.82)}
             className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
-            <Button variant="secondary" size="md" aria-label="View resume">
-              <FileText size={13} strokeWidth={1.75} />
+            <Button
+              variant="ghost"
+              size="md"
+              aria-label="View resume"
+            >
+              <FileText size={14} strokeWidth={1.75} />
               Resume
+              <ArrowUpRight size={11} className="opacity-35" />
             </Button>
 
             <Button

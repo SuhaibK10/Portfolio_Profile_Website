@@ -10,23 +10,27 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const PAPERS = [
   {
-    title:  "Autonomous AI Agent for Analyzing Air Pollution Data",
-    venue:  null,
+    title:  "Quantum Kernel Methods for Portfolio Optimization",
+    venue:  "Indo Quantum Summit 2026",
     bullets: [
-      "Built an end-to-end agentic ML system for data ingestion, forecasting, classification, and clustering on large-scale AQI datasets.",
+      "Abstract selected for presentation at Indo Quantum Summit 2026, aligned with India's ₹6,003 Crore National Quantum Mission.",
+      "Benchmarked QSVMs (ZZ/Pauli feature maps) against XGBoost, SVM, and Random Forest on NSE blue-chip portfolio data — achieved Sharpe ratio 1.48 vs. 1.20–1.42 for classical models, with 95% recall on 4 qubits at circuit depth 1, confirming NISQ-era feasibility.",
     ],
     links: [
+      { label: "Abstract", href: "#" },
       { label: "Certificate", href: "#" },
     ],
   },
   {
-    title:  "Quantum vs Classical ML Benchmarking on NSE Data",
-    venue:  "Presented at Indo Quantum Summit",
+    title:  "Autonomous AI Agent for Analyzing Air Pollution Data",
+    venue:  null,
     bullets: [
-      "Benchmarked quantum kernel methods (QSVM) against classical ML models (SVM, k-NN, Logistic Regression) for portfolio optimization on real NSE market data under a 4-qubit hardware constraint.",
+      "Designed an autonomous agentic AI pipeline orchestrating data ingestion, preprocessing, forecasting, clustering, and classification to automate end-to-end air quality analysis.",
+      "Integrated multiple ML models (Random Forest, XGBoost, K-Means, Prophet) into a unified decision workflow, enabling model selection based on analytical objectives and dataset characteristics.",
     ],
     links: [
-      { label: "GitHub", href: "#" },
+      { label: "Abstract", href: "#" },
+      { label: "Certificate", href: "#" },
     ],
   },
 ] as const;

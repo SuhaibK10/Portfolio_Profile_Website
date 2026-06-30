@@ -10,25 +10,25 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const TIMELINE = [
   {
-    role:     "Product Engineer",
+    role:     "Founding Engineer",
     company:  "Louis Polo",
     logo:     "/louispolo.png",
     logoSize: "lg" as const,
-    period:   "Sep 2025 – Apr 2026",
+    period:   "Aug 2025 – May 2026",
     bullets: [
-      "Built and deployed a full e-commerce platform from scratch.",
-      "Developed internal inventory and order management systems.",
+      "Led end-to-end engineering for Louis Polo's launch as a consumer brand, transforming a 10+ year OEM manufacturer into a modern D2C brand.",
+      "Designed, developed, and deployed the company's production e-commerce platform, integrating authentication, payments, product management, media delivery, and cloud infrastructure.",
     ],
   },
   {
-    role:     "ML and Research Head",
+    role:     "ML & Research Head",
     company:  "Faast FinTech Club",
     logo:     "/faast.png",
     logoSize: "sm" as const,
-    period:   "Oct 2025 – Present",
+    period:   "Sep 2025 – Present",
     bullets: [
-      "Leading AI and ML research initiatives for the club.",
-      "Working at the intersection of finance and machine learning.",
+      "Led the ML & Research vertical at FAAST, establishing quantitative finance and algorithmic trading as a core research pillar from the ground up.",
+      "Conducted workshops on quantitative strategy development (SMA, EMA, MACD, ADX, Parabolic SAR) alongside historical backtesting, walk-forward analysis, and Monte Carlo simulation.",
     ],
   },
   {
@@ -36,10 +36,10 @@ const TIMELINE = [
     company:  "IIT Jammu",
     logo:     "/iitjammu.png",
     logoSize: "xl" as const,
-    period:   "June 2025 – Aug 2025",
+    period:   "Jun 2025 – Jul 2025",
     bullets: [
-      "Worked on applied AI and generative AI workflows.",
-      "Built practical machine learning systems under research supervision.",
+      "Implemented BERT-based transformer and LSTM/Seq2Seq encoder-decoder architectures across applied NLP workflows, evaluating model performance in real-world settings.",
+      "Developed LLM-powered agentic workflows using CrewAI and the OpenAI Agents SDK, implementing multi-agent orchestration, tool calling, planning, and autonomous task execution.",
     ],
   },
   {
@@ -49,8 +49,8 @@ const TIMELINE = [
     logoSize: "2xl" as const,
     period:   "Nov 2024 – Present",
     bullets: [
-      "Shipped websites and MVPs for startups and small businesses.",
-      "Handled full project lifecycle from design to deployment.",
+      "Founded a technology consulting venture delivering end-to-end digital solutions for startups and SMBs, spanning D2C, healthcare, EdTech, and manufacturing.",
+      "Delivered production-grade web platforms, AI systems, ERPs, LMS, and MVPs to clients globally.",
     ],
   },
 ] as const;

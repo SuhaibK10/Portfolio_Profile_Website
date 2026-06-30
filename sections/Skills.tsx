@@ -205,6 +205,23 @@ function PostmanIcon() {
   );
 }
 
+function TypeScriptIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+      <rect width="24" height="24" rx="3" fill="#3178C6"/>
+      <path fill="#fff" d="M13.6 12.9H17v-1.8H9v1.8h3.4v9.1h1.2zM7.8 18.3c.3 1.7 1.7 2.8 3.7 2.8 2.1 0 3.6-1.1 3.6-2.9 0-1.6-1-2.4-2.7-3l-.7-.3c-.9-.3-1.3-.6-1.3-1.2 0-.5.4-.9 1.1-.9.7 0 1.1.3 1.4 1l1.5-.9c-.6-1.1-1.5-1.6-2.9-1.6-1.8 0-3 1.1-3 2.6 0 1.5.9 2.3 2.4 2.9l.7.3c1 .4 1.5.7 1.5 1.4 0 .6-.5 1-1.4 1-1 0-1.6-.5-2-1.3l-1.6.9z"/>
+    </svg>
+  );
+}
+
+function OpenAIIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+      <path fill="#ffffff" d="M22.28 9.82a5.99 5.99 0 00-.51-4.91 6.05 6.05 0 00-6.51-2.9A6 6 0 004.98 4.18a5.99 5.99 0 00-4 2.9 6.05 6.05 0 00.74 7.09 5.99 5.99 0 00.51 4.92 6.05 6.05 0 006.51 2.9A6 6 0 0019.02 19.8a5.99 5.99 0 004-2.9 6.05 6.05 0 00-.74-7.08zM13.73 21.5a4.48 4.48 0 01-2.88-1.04l.14-.08 4.78-2.76a.78.78 0 00.4-.68v-6.74l2.02 1.17a.07.07 0 01.04.06v5.58a4.5 4.5 0 01-4.5 4.49zM3.85 17.5a4.46 4.46 0 01-.54-3.02l.14.09 4.78 2.76a.78.78 0 00.79 0l5.84-3.37v2.33a.08.08 0 01-.03.07l-4.83 2.79a4.5 4.5 0 01-6.15-1.65zM2.6 7.7a4.48 4.48 0 012.36-1.97v5.68a.77.77 0 00.39.67l5.84 3.37-2.02 1.17a.08.08 0 01-.07 0L4.27 13.8A4.5 4.5 0 012.6 7.7zm16.6 3.86l-5.84-3.38 2.02-1.16a.08.08 0 01.07 0l4.83 2.79a4.5 4.5 0 01-.68 8.11v-5.68a.78.78 0 00-.4-.68zm2.01-3.02l-.14-.09-4.78-2.76a.78.78 0 00-.79 0l-5.84 3.37V6.73a.07.07 0 01.03-.06l4.83-2.79a4.5 4.5 0 016.69 4.66zM9.34 13.06l-2.02-1.17a.08.08 0 01-.04-.06V6.25a4.5 4.5 0 017.38-3.45l-.14.08-4.78 2.76a.78.78 0 00-.4.68v6.74zm1.1-2.37l2.6-1.5 2.6 1.5v3l-2.6 1.5-2.6-1.5v-3z"/>
+    </svg>
+  );
+}
+
 /* ─── Skill data ────────────────────────────────────────────────── */
 
 interface Skill  { name: string; icon: ReactNode; color: string }
@@ -219,6 +236,7 @@ const CATEGORIES: Category[] = [
     label: "Languages",
     skills: [
       { name: "Python",     icon: <PythonIcon />,            color: "#3776AB" },
+      { name: "TypeScript", icon: <TypeScriptIcon />,        color: "#3178C6" },
       { name: "JavaScript", icon: <JavaScriptIcon />,        color: "#F7DF1E" },
       { name: "Java",       icon: <JavaIcon />,              color: "#ED8B00" },
       { name: "C",          icon: L(Cpu, "#A8B9CC"),         color: "#A8B9CC" },
@@ -248,8 +266,9 @@ const CATEGORIES: Category[] = [
   {
     label: "AI & Automation",
     skills: [
-      { name: "CrewAI", icon: <CrewAIIcon />, color: "#7C3AED" },
-      { name: "n8n",    icon: <N8NIcon />,    color: "#EA4B71" },
+      { name: "CrewAI",           icon: <CrewAIIcon />, color: "#7C3AED" },
+      { name: "OpenAI Agents SDK", icon: <OpenAIIcon />, color: "#ffffff" },
+      { name: "n8n",              icon: <N8NIcon />,    color: "#EA4B71" },
     ],
   },
   {

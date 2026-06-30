@@ -12,31 +12,45 @@ import { Card } from "@/components/Card";
 const PROJECTS = [
   {
     index:       "01",
-    title:       "Startup Idea Evaluator",
-    description: "Multi-agent AI system using CrewAI and OpenAI APIs for idea validation and business analysis.",
+    title:       "VentureScope — Multi-Agent Startup Evaluator",
+    description: "CrewAI agents simulating a VC — Problem Validator → Market Researcher → Strategist → Moat Analyst → Memo Writer — with a weighted scoring engine across 5 dimensions and live Plotly radar + PDF export.",
     tag:         "Multi-Agent AI",
     gradient:    "rgba(99,102,241,0.12)",
   },
   {
     index:       "02",
     title:       "RBIH Mule Account Detection",
-    description: "Explainable machine learning system using LightGBM, XGBoost and SHAP.",
+    description: "LightGBM pipeline over 7.4M banking transactions with 31 behavioral features, covering all 12 RBI-defined AML patterns — 0.8572 AUC-ROC and 33× PR-AUC lift on a 99:1 imbalanced dataset.",
     tag:         "Explainable ML",
     gradient:    "rgba(201,168,92,0.10)",
   },
   {
     index:       "03",
+    title:       "BioTrack Clinical Pathology",
+    description: "5-stage inference pipeline (OCR → biomarker normalization → XGBoost risk scoring → SHAP → LLM advisory) with longitudinal trend tracking across 200+ biomarkers and 8+ organ systems.",
+    tag:         "Health-Tech ML",
+    gradient:    "rgba(34,197,94,0.10)",
+  },
+  {
+    index:       "04",
     title:       "Quantum vs Classical ML Visualization",
-    description: "Interactive benchmarking between quantum and classical machine learning.",
+    description: "Interactive benchmarking between quantum kernel methods and classical machine learning.",
     tag:         "Research",
     gradient:    "rgba(167,139,250,0.10)",
   },
   {
-    index:       "04",
+    index:       "05",
     title:       "Air Pollution Intelligence Agent",
     description: "Agentic ML system for forecasting and analyzing AQI datasets.",
     tag:         "Agentic AI",
     gradient:    "rgba(20,184,166,0.09)",
+  },
+  {
+    index:       "06",
+    title:       "Addictive Learning",
+    description: "Real-time competitive quiz game where two players race to answer AI-generated questions, best of 7 wins.",
+    tag:         "Full-Stack AI",
+    gradient:    "rgba(236,72,153,0.10)",
   },
 ] as const;
 

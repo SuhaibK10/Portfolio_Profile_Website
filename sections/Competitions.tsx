@@ -20,6 +20,15 @@ const COMPETITIONS = [
       "Live stock analytics dashboard",
     ],
   },
+  {
+    title:        "4th Place — Footprints on Mars, Tryst'23, IIT Delhi",
+    description:
+      "Proposed a Digital Twin simulation framework for Mars habitat management.",
+    highlights: [
+      "Virtual modeling of life-support, energy, and resource systems",
+      "Risk-free failure scenario testing for habitat operations",
+    ],
+  },
 ] as const;
 
 /* ─── Motion ────────────────────────────────────────────────────────── */
