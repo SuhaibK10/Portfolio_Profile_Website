@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { geistSans, geistMono, inter } from "@/lib/fonts";
 import { SmoothScrollProvider }  from "@/components/providers/SmoothScrollProvider";
 import { MotionProvider }        from "@/components/providers/MotionProvider";
@@ -63,6 +65,18 @@ export default function RootLayout({
 
           </MotionProvider>
         </SmoothScrollProvider>
+
+        {/* Vercel Analytics */}
+        <Analytics />
+
+        {/* Microsoft Clarity — replace xf4ao86itg with your project ID */}
+        <Script id="ms-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window,document,"clarity","script","xf4ao86itg");`}
+        </Script>
 
       </body>
     </html>

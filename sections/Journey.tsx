@@ -85,11 +85,11 @@ export function Journey() {
               <div key={entry.role} className="flex gap-6 md:gap-8">
 
                 {/* ── Left: dot + connector ───────────────────────────── */}
-                <div className="flex w-5 flex-shrink-0 flex-col items-center">
+                <div className="flex w-5 shrink-0 flex-col items-center">
 
                   {/* Dot */}
                   <motion.div
-                    className="relative z-10 flex-shrink-0"
+                    className="relative z-10 shrink-0"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true, margin: "-30px" }}
@@ -154,8 +154,8 @@ export function Journey() {
                         "rounded-md object-contain"
                       }
                     />
-                    <p className="font-mono text-[0.6875rem] tracking-[0.18em]
-                                  uppercase text-sky-300">
+                    <p className="font-body font-medium text-[0.75rem] tracking-[0.18em]
+                                   color: #8FB996;">
                       {entry.company}
                     </p>
                   </div>

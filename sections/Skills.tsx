@@ -328,9 +328,9 @@ export function Skills() {
                   <motion.div
                     key={skill.name}
                     variants={chipVariants}
-                    className="group flex items-center gap-2 rounded-lg
+                    className="group flex items-center gap-2.5 rounded-lg
                                border border-white/6 bg-card/60
-                               px-3 py-2 backdrop-blur-sm
+                               px-4 py-2.5 backdrop-blur-sm
                                transition-all duration-200
                                hover:border-white/14 hover:bg-card"
                   >
