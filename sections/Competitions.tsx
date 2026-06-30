@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy } from "lucide-react";
+import { Trophy, ArrowUpRight } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -19,6 +19,9 @@ const COMPETITIONS = [
       "QR-code pass generation",
       "Live stock analytics dashboard",
     ],
+    links: [
+      { label: "Certificate", href: "https://drive.google.com/file/d/1KFeN1iYdZYU_b86eJXMpsNrkLff4-sCD/view?usp=share_link" },
+    ],
   },
   {
     title:        "4th Place — Footprints on Mars, Tryst'23, IIT Delhi",
@@ -27,6 +30,9 @@ const COMPETITIONS = [
     highlights: [
       "Virtual modeling of life-support, energy, and resource systems",
       "Risk-free failure scenario testing for habitat operations",
+    ],
+    links: [
+      { label: "Certificate", href: "https://drive.google.com/file/d/1ocCrUCZuGm7vPX2EjqEsop8PEVkD__AZ/view?usp=share_link" },
     ],
   },
 ] as const;
@@ -83,7 +89,7 @@ export function Competitions() {
               </p>
 
               {/* Highlights */}
-              <ul className="space-y-1.5">
+              <ul className="mb-4 space-y-1.5">
                 {item.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-2">
                     <span className="mt-[0.35rem] h-1 w-1 shrink-0 rounded-full bg-gold/50" />
@@ -94,6 +100,24 @@ export function Competitions() {
                   </li>
                 ))}
               </ul>
+
+              {/* Links */}
+              <div className="flex flex-wrap gap-3">
+                {item.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-mono text-[0.6875rem]
+                               tracking-[0.12em] uppercase text-muted/60
+                               hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                    <ArrowUpRight size={11} className="opacity-50" />
+                  </a>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

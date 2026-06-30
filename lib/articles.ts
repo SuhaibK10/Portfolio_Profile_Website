@@ -16,14 +16,6 @@ export const ARTICLES: Article[] = [
     publishedAt: "May 2026",
   },
   {
-    slug:        "ai-doesnt-replace-engineers-it-multiplies-them",
-    title:       "AI Doesn't Replace Engineers, It Multiplies Them",
-    excerpt:
-      "The question isn't whether AI will take software jobs. It's whether engineers who use AI effectively will replace those who don't.",
-    readingTime: "5 min read",
-    publishedAt: "Apr 2026",
-  },
-  {
     slug:        "why-understanding-systems-matters-more-than-tools",
     title:       "Why Understanding Systems Matters More Than Tools",
     excerpt:

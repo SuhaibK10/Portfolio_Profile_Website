@@ -1,14 +1,18 @@
-import { type ButtonHTMLAttributes, type ReactNode } from "react";
+import { type AnchorHTMLAttributes, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type Variant = "primary" | "secondary" | "ghost" | "outline";
 type Size    = "sm" | "md" | "lg";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface BaseProps {
   children: ReactNode;
   variant?: Variant;
   size?:    Size;
 }
+
+type ButtonProps =
+  | (BaseProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined })
+  | (BaseProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string });
 
 const variantStyles: Record<Variant, string> = {
   primary:
@@ -32,23 +36,38 @@ export function Button({
   variant  = "primary",
   size     = "md",
   className,
+  href,
   ...props
 }: ButtonProps) {
+  const classes = cn(
+    "inline-flex items-center justify-center rounded-lg font-body font-medium",
+    "transition-all duration-200",
+    "active:scale-[0.97]",
+    "focus-visible:outline-none focus-visible:ring-2",
+    "focus-visible:ring-gold/50 focus-visible:ring-offset-2",
+    "focus-visible:ring-offset-background",
+    "disabled:pointer-events-none disabled:opacity-40",
+    variantStyles[variant],
+    sizeStyles[size],
+    className,
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
-      className={cn(
-        "inline-flex items-center justify-center rounded-lg font-body font-medium",
-        "transition-all duration-200",
-        "active:scale-[0.97]",
-        "focus-visible:outline-none focus-visible:ring-2",
-        "focus-visible:ring-gold/50 focus-visible:ring-offset-2",
-        "focus-visible:ring-offset-background",
-        "disabled:pointer-events-none disabled:opacity-40",
-        variantStyles[variant],
-        sizeStyles[size],
-        className,
-      )}
-      {...props}
+      className={classes}
+      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {children}
     </button>

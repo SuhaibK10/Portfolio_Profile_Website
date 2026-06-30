@@ -22,8 +22,8 @@ export default function Home() {
       <FeaturedWork />
       <Research />
       <Competitions />
-      <Exploring />
       <Skills />
+      <Exploring />
       <Statement />
       <Writing />
       <BeyondCode />

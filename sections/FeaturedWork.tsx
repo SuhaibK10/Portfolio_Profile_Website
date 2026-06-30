@@ -16,6 +16,11 @@ const PROJECTS = [
     description: "CrewAI agents simulating a VC — Problem Validator → Market Researcher → Strategist → Moat Analyst → Memo Writer — with a weighted scoring engine across 5 dimensions and live Plotly radar + PDF export.",
     tag:         "Multi-Agent AI",
     gradient:    "rgba(99,102,241,0.12)",
+    links: [
+      { label: "Live",   href: "https://startupideaevaluator.streamlit.app/" },
+      { label: "GitHub", href: "https://github.com/SuhaibK10/Startup-Idea-Evaluator-using-CrewAI" },
+      { label: "Demo",   href: "https://www.linkedin.com/posts/suhaibkhan10_crewai-multiagents-iitjammu-activity-7366056769044795392-_7se" },
+    ],
   },
   {
     index:       "02",
@@ -23,6 +28,10 @@ const PROJECTS = [
     description: "LightGBM pipeline over 7.4M banking transactions with 31 behavioral features, covering all 12 RBI-defined AML patterns — 0.8572 AUC-ROC and 33× PR-AUC lift on a 99:1 imbalanced dataset.",
     tag:         "Explainable ML",
     gradient:    "rgba(201,168,92,0.10)",
+    links: [
+      { label: "Live",   href: "https://muleaccountdetector.streamlit.app/" },
+      { label: "GitHub", href: "https://github.com/SuhaibK10/Mule-Account-Detector" },
+    ],
   },
   {
     index:       "03",
@@ -30,27 +39,20 @@ const PROJECTS = [
     description: "5-stage inference pipeline (OCR → biomarker normalization → XGBoost risk scoring → SHAP → LLM advisory) with longitudinal trend tracking across 200+ biomarkers and 8+ organ systems.",
     tag:         "Health-Tech ML",
     gradient:    "rgba(34,197,94,0.10)",
+    links: [
+      { label: "Live",   href: "https://bio-track-smart-pathology.vercel.app/" },
+      { label: "GitHub", href: "https://github.com/SuhaibK10/BioTrack-Smart-Pathology" },
+    ],
   },
   {
     index:       "04",
-    title:       "Quantum vs Classical ML Visualization",
-    description: "Interactive benchmarking between quantum kernel methods and classical machine learning.",
-    tag:         "Research",
-    gradient:    "rgba(167,139,250,0.10)",
-  },
-  {
-    index:       "05",
-    title:       "Air Pollution Intelligence Agent",
-    description: "Agentic ML system for forecasting and analyzing AQI datasets.",
-    tag:         "Agentic AI",
-    gradient:    "rgba(20,184,166,0.09)",
-  },
-  {
-    index:       "06",
     title:       "Addictive Learning",
     description: "Real-time competitive quiz game where two players race to answer AI-generated questions, best of 7 wins.",
     tag:         "Full-Stack AI",
     gradient:    "rgba(236,72,153,0.10)",
+    links: [
+      { label: "GitHub", href: "https://github.com/SuhaibK10/Addictive-Learning-" },
+    ],
   },
 ] as const;
 
@@ -135,14 +137,33 @@ export function FeaturedWork() {
                     </p>
                   </div>
 
-                  {/* Arrow hint */}
-                  <div
-                    aria-hidden
-                    className="mt-5 self-end opacity-0 transition-opacity
-                               duration-300 group-hover:opacity-20"
-                  >
-                    <ArrowUpRight size={16} strokeWidth={1.5} />
-                  </div>
+                  {/* Links, or a decorative arrow hint when there are none */}
+                  {p.links.length > 0 ? (
+                    <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1.5">
+                      {p.links.map((link) => (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 font-mono text-[0.6875rem]
+                                     tracking-[0.12em] uppercase text-muted/60
+                                     hover:text-foreground transition-colors"
+                        >
+                          {link.label}
+                          <ArrowUpRight size={11} className="opacity-50" />
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <div
+                      aria-hidden
+                      className="mt-5 self-end opacity-0 transition-opacity
+                                 duration-300 group-hover:opacity-20"
+                    >
+                      <ArrowUpRight size={16} strokeWidth={1.5} />
+                    </div>
+                  )}
 
                 </div>
               </Card>

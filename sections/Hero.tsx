@@ -169,9 +169,12 @@ export function Hero() {
             className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
             <Button
+              href="https://drive.google.com/file/d/1KuZGH-BqoA_qHVXjy2rDkuIO_bSgVPMH/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="ghost"
               size="md"
-              aria-label="View resume"
+              aria-label="View resume (opens in new tab)"
             >
               <FileText size={14} strokeWidth={1.75} />
               Resume
@@ -179,6 +182,9 @@ export function Hero() {
             </Button>
 
             <Button
+              href="https://github.com/SuhaibK10"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="ghost"
               size="md"
               aria-label="GitHub profile (opens in new tab)"
@@ -189,6 +195,9 @@ export function Hero() {
             </Button>
 
             <Button
+              href="https://www.linkedin.com/in/suhaibkhan10/"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="ghost"
               size="md"
               aria-label="LinkedIn profile (opens in new tab)"

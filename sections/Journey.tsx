@@ -12,6 +12,7 @@ const TIMELINE = [
   {
     role:     "Founding Engineer",
     company:  "Louis Polo",
+    link:     "http://www.louispolo.in/",
     logo:     "/louispolo.png",
     logoSize: "lg" as const,
     period:   "Aug 2025 – May 2026",
@@ -21,19 +22,9 @@ const TIMELINE = [
     ],
   },
   {
-    role:     "ML & Research Head",
-    company:  "Faast FinTech Club",
-    logo:     "/faast.png",
-    logoSize: "sm" as const,
-    period:   "Sep 2025 – Present",
-    bullets: [
-      "Led the ML & Research vertical at FAAST, establishing quantitative finance and algorithmic trading as a core research pillar from the ground up.",
-      "Conducted workshops on quantitative strategy development (SMA, EMA, MACD, ADX, Parabolic SAR) alongside historical backtesting, walk-forward analysis, and Monte Carlo simulation.",
-    ],
-  },
-  {
     role:     "ML Intern",
     company:  "IIT Jammu",
+    link:     null,
     logo:     "/iitjammu.png",
     logoSize: "xl" as const,
     period:   "Jun 2025 – Jul 2025",
@@ -45,12 +36,25 @@ const TIMELINE = [
   {
     role:     "Founder",
     company:  "Weblicate",
+    link:     "http://www.weblicate.in/",
     logo:     "/weblicate.png",
     logoSize: "2xl" as const,
     period:   "Nov 2024 – Present",
     bullets: [
       "Founded a technology consulting venture delivering end-to-end digital solutions for startups and SMBs, spanning D2C, healthcare, EdTech, and manufacturing.",
       "Delivered production-grade web platforms, AI systems, ERPs, LMS, and MVPs to clients globally.",
+    ],
+  },
+  {
+    role:     "ML & Research Head",
+    company:  "Faast FinTech Club",
+    link:     "http://www.amufaast.com/",
+    logo:     "/faast.png",
+    logoSize: "sm" as const,
+    period:   "Sep 2025 – Present",
+    bullets: [
+      "Led the ML & Research vertical at FAAST, establishing quantitative finance and algorithmic trading as a core research pillar from the ground up.",
+      "Conducted workshops on quantitative strategy development (SMA, EMA, MACD, ADX, Parabolic SAR) alongside historical backtesting, walk-forward analysis, and Monte Carlo simulation.",
     ],
   },
 ] as const;
@@ -154,10 +158,22 @@ export function Journey() {
                         "rounded-md object-contain"
                       }
                     />
-                    <p className="font-body font-medium text-[0.75rem] tracking-[0.18em]
-                                   color: #8FB996;">
-                      {entry.company}
-                    </p>
+                    {"link" in entry && entry.link ? (
+                      <a
+                        href={entry.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body font-medium text-[0.75rem] tracking-[0.18em]
+                                   text-[#E8E8E5] transition-colors hover:text-gold"
+                      >
+                        {entry.company}
+                      </a>
+                    ) : (
+                      <p className="font-body font-medium text-[0.75rem] tracking-[0.18em]
+                                     text-[#E8E8E5]">
+                        {entry.company}
+                      </p>
+                    )}
                   </div>
 
                   {/* Role */}

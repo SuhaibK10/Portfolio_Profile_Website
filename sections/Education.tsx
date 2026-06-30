@@ -19,6 +19,13 @@ const EDUCATION = [
       "Machine Learning",
       "Data Structures",
       "Web Engineering",
+      "Digital System Design",
+      "Object Oriented Programming using Java",
+      "Computer Architecture",
+      "Database Management System",
+      "Operating System and Shell Programming",
+      "Software Engineering",
+      "Deep Learning",
     ],
   },
 ] as const;

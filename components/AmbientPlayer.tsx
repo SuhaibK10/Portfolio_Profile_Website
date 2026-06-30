@@ -2,16 +2,17 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Volume2, VolumeX, CloudRain, Music2, Coffee } from "lucide-react";
 
 /* ─── Types ─────────────────────────────────────────────────────────── */
 
 type Mode = "rain" | "piano" | "coffee" | "off";
 
-const OPTIONS: { id: Mode; label: string }[] = [
-  { id: "rain",   label: "Rain" },
-  { id: "piano",  label: "Piano" },
-  { id: "coffee", label: "Coffee Shop" },
-  { id: "off",    label: "Off" },
+const OPTIONS: { id: Mode; label: string; icon: typeof CloudRain }[] = [
+  { id: "rain",   label: "Rain",        icon: CloudRain },
+  { id: "piano",  label: "Piano",       icon: Music2 },
+  { id: "coffee", label: "Coffee Shop", icon: Coffee },
+  { id: "off",    label: "Off",         icon: VolumeX },
 ];
 
 const STORAGE_KEY = "ambient-mode";
@@ -281,14 +282,19 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
       <motion.button
         onClick={() => setOpen((o) => !o)}
         whileTap={{ scale: 0.92 }}
-        aria-label="Ambient mode"
+        aria-label={isPlaying ? "Ambient sound — playing, click to change or turn off" : "Ambient sound — off, click to turn on"}
         aria-expanded={open}
-        className="relative flex h-11 w-11 items-center justify-center rounded-full
-                   border border-border/40 bg-card/70 text-[1.1rem] backdrop-blur-sm
-                   text-muted/45 transition-all duration-300
-                   hover:border-border/70 hover:text-muted/80"
+        title={isPlaying ? "Ambient sound on — click to turn off" : "Ambient sound off — click to turn on"}
+        className={`relative flex h-11 w-11 items-center justify-center rounded-full
+                   border backdrop-blur-sm transition-all duration-300
+                   ${
+                     isPlaying
+                       ? "border-gold/50 bg-card/90 text-gold shadow-[0_0_20px_rgba(201,168,92,0.18)]"
+                       : "border-border/70 bg-card/90 text-foreground-secondary"
+                   }
+                   hover:border-gold/60 hover:text-gold`}
       >
-        ♫
+        {isPlaying ? <Volume2 size={18} strokeWidth={2} /> : <VolumeX size={18} strokeWidth={2} />}
 
         {/* Breathing ring — visible only when playing */}
         <AnimatePresence>
@@ -296,8 +302,8 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
             <motion.span
               key="ring"
               className="pointer-events-none absolute inset-0 rounded-full
-                         border border-gold/30"
-              initial={{ scale: 1, opacity: 0.5 }}
+                         border border-gold/40"
+              initial={{ scale: 1, opacity: 0.6 }}
               animate={{ scale: 1.6, opacity: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
@@ -314,12 +320,13 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
             animate={{ opacity: 1, scale: 1,    y: 0 }}
             exit={{    opacity: 0, scale: 0.95, y: 6 }}
             transition={{ duration: 0.16, ease: EASE }}
-            className="absolute right-0 bottom-full mb-2 w-36 origin-bottom-right overflow-hidden
-                       rounded-xl border border-border/60 bg-card/90 p-1.5
+            className="absolute right-0 bottom-full mb-2 w-44 origin-bottom-right overflow-hidden
+                       rounded-xl border border-border/60 bg-card/95 p-1.5
                        shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm"
           >
-            {OPTIONS.map(({ id, label }, i) => {
+            {OPTIONS.map(({ id, label, icon: Icon }, i) => {
               const active = selected === id;
+              const isOff  = id === "off";
               return (
                 <motion.button
                   key={id}
@@ -327,25 +334,24 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
                   animate={{ opacity: 1, x: 0  }}
                   transition={{ delay: i * 0.04, duration: 0.18, ease: EASE }}
                   onClick={() => handleSelect(id)}
-                  className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2
+                  className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2
                              text-left transition-colors duration-150
-                             hover:bg-white/5"
+                             hover:bg-white/8
+                             ${isOff ? "mt-1 border-t border-border/40 pt-2.5" : ""}`}
                 >
-                  {/* Selection dot */}
-                  <span
-                    className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors
-                                duration-200 ${
-                                  active
-                                    ? id === "off"
-                                      ? "bg-muted/40"
-                                      : "bg-gold/70"
-                                    : "bg-transparent border border-border/60"
-                                }`}
+                  <Icon
+                    size={15}
+                    strokeWidth={1.8}
+                    className={
+                      active
+                        ? isOff ? "text-foreground-secondary" : "text-gold"
+                        : "text-muted/60"
+                    }
                   />
 
                   <span
                     className={`font-body text-sm transition-colors duration-200 ${
-                      active ? "text-foreground" : "text-foreground-secondary"
+                      active ? "text-foreground font-medium" : "text-foreground-secondary"
                     }`}
                   >
                     {label}

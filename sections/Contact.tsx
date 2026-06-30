@@ -26,8 +26,8 @@ const LINKS = [
   },
   {
     platform: "LinkedIn",
-    display:  "suhaibkhan",
-    href:     "https://linkedin.com/in/suhaibkhan",
+    display:  "suhaibkhan10",
+    href:     "https://www.linkedin.com/in/suhaibkhan10/",
     external: true,
     icon:     <LinkedInIcon size={20} />,
   },
