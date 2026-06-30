@@ -164,18 +164,17 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
   const stopRef   = useRef<(() => void) | null>(null);
   const wrapRef   = useRef<HTMLDivElement>(null);
 
-  /* ── Autoplay piano on first user interaction ── */
+  /* ── Resume saved ambient mode on first user interaction (off by default) ── */
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY) as Mode | null;
 
-    // If user previously set it to "off", respect that
-    if (saved === "off") {
+    // No saved preference, or previously turned off — stay off, no autoplay
+    if (!saved || saved === "off") {
       setSelected("off");
       return;
     }
 
-    // Use saved preference or default to piano
-    const mode: Mode = (saved as Mode) ?? "piano";
+    const mode: Mode = saved;
     setSelected(mode);
 
     function startOnInteraction() {
