@@ -88,7 +88,11 @@ export function Education() {
               </div>
 
               {/* Coursework */}
-              <div className="mt-4 flex flex-wrap gap-2">
+              <p className="mt-4 font-mono text-[0.625rem] tracking-[0.2em]
+                            uppercase text-muted/60">
+                Relevant Coursework
+              </p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
                 {item.coursework.map((c) => (
                   <span
                     key={c}
