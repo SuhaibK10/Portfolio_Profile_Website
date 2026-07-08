@@ -203,7 +203,6 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
     );
 
     return cleanup;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* ── Close dropdown on outside click ── */

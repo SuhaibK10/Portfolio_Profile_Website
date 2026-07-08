@@ -10,35 +10,10 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const TIMELINE = [
   {
-    role:     "Founding Engineer",
-    company:  "Louis Polo",
-    link:     "http://www.louispolo.in/",
-    logo:     "/louispolo.png",
-    logoSize: "lg" as const,
-    period:   "Aug 2025 – May 2026",
-    bullets: [
-      "Led end-to-end engineering for Louis Polo's launch as a consumer brand, transforming a 10+ year OEM manufacturer into a modern D2C brand.",
-      "Designed, developed, and deployed the company's production e-commerce platform, integrating authentication, payments, product management, media delivery, and cloud infrastructure.",
-    ],
-  },
-  {
-    role:     "ML Intern",
-    company:  "IIT Jammu",
-    link:     null,
-    logo:     "/iitjammu.png",
-    logoSize: "xl" as const,
-    period:   "Jun 2025 – Jul 2025",
-    bullets: [
-      "Implemented BERT-based transformer and LSTM/Seq2Seq encoder-decoder architectures across applied NLP workflows, evaluating model performance in real-world settings.",
-      "Developed LLM-powered agentic workflows using CrewAI and the OpenAI Agents SDK, implementing multi-agent orchestration, tool calling, planning, and autonomous task execution.",
-    ],
-  },
-  {
     role:     "Founder",
     company:  "Weblicate",
     link:     "http://www.weblicate.in/",
     logo:     "/weblicate.png",
-    logoSize: "2xl" as const,
     period:   "Nov 2024 – Present",
     bullets: [
       "Founded a technology consulting venture delivering end-to-end digital solutions for startups and SMBs, spanning D2C, healthcare, EdTech, and manufacturing.",
@@ -46,11 +21,32 @@ const TIMELINE = [
     ],
   },
   {
+    role:     "ML Intern",
+    company:  "IIT Jammu",
+    link:     null,
+    logo:     "/iitjammu.png",
+    period:   "Jun 2025 – Jul 2025",
+    bullets: [
+      "Implemented BERT-based transformer and LSTM/Seq2Seq encoder-decoder architectures across applied NLP workflows, evaluating model performance in real-world settings.",
+      "Developed LLM-powered agentic workflows using CrewAI and the OpenAI Agents SDK, implementing multi-agent orchestration, tool calling, planning, and autonomous task execution.",
+    ],
+  },
+  {
+    role:     "Founding Engineer",
+    company:  "Louis Polo",
+    link:     "http://www.louispolo.in/",
+    logo:     "/louispolo.png",
+    period:   "Aug 2025 – May 2026",
+    bullets: [
+      "Led end-to-end engineering for Louis Polo's launch as a consumer brand, transforming a 10+ year OEM manufacturer into a modern D2C brand.",
+      "Designed, developed, and deployed the company's production e-commerce platform, integrating authentication, payments, product management, media delivery, and cloud infrastructure.",
+    ],
+  },
+  {
     role:     "ML & Research Head",
     company:  "Faast FinTech Club",
     link:     "http://www.amufaast.com/",
     logo:     "/faast.png",
-    logoSize: "sm" as const,
     period:   "Sep 2025 – Present",
     bullets: [
       "Led the ML & Research vertical at FAAST, establishing quantitative finance and algorithmic trading as a core research pillar from the ground up.",
@@ -143,20 +139,9 @@ export function Journey() {
                     <Image
                       src={entry.logo}
                       alt={entry.company}
-                      width={"logoSize" in entry && entry.logoSize === "xl" ? 84 : "logoSize" in entry && entry.logoSize === "2xl" ? 68 : "logoSize" in entry && entry.logoSize === "lg" ? 44 : "logoSize" in entry && entry.logoSize === "sm" ? 36 : 32}
-                      height={"logoSize" in entry && entry.logoSize === "xl" ? 84 : "logoSize" in entry && entry.logoSize === "2xl" ? 68 : "logoSize" in entry && entry.logoSize === "lg" ? 44 : "logoSize" in entry && entry.logoSize === "sm" ? 36 : 32}
-                      className={
-                        ("logoSize" in entry && entry.logoSize === "xl"
-                          ? "h-21 w-21 "
-                          : "logoSize" in entry && entry.logoSize === "2xl"
-                          ? "h-17 w-17 "
-                          : "logoSize" in entry && entry.logoSize === "lg"
-                          ? "h-11 w-11 "
-                          : "logoSize" in entry && entry.logoSize === "sm"
-                          ? "h-9 w-9 "
-                          : "h-8 w-8 ") +
-                        "rounded-md object-contain"
-                      }
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 rounded-md object-contain"
                     />
                     {"link" in entry && entry.link ? (
                       <a

@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Mail } from "lucide-react";
 import { motion } from "framer-motion";
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons/BrandIcons";
+import { GitHubIcon, LinkedInIcon } from "@/components/icons/BrandIcons";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -30,13 +30,6 @@ const LINKS = [
     href:     "https://www.linkedin.com/in/suhaibkhan10/",
     external: true,
     icon:     <LinkedInIcon size={20} />,
-  },
-  {
-    platform: "X",
-    display:  "@suhaibkhan",
-    href:     "https://x.com/suhaibkhan",
-    external: true,
-    icon:     <XIcon size={20} />,
   },
 ];
 
@@ -83,8 +76,8 @@ export function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="mx-auto mt-14 grid max-w-2xl gap-1
-                     grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="mx-auto mt-14 grid max-w-xl gap-1
+                     grid-cols-1 sm:grid-cols-3"
         >
           {LINKS.map((link) => (
             <motion.a

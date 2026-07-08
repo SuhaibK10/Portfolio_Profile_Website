@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { geistSans, geistMono, inter } from "@/lib/fonts";
@@ -12,19 +11,29 @@ import { AmbientPlayer } from "@/components/AmbientPlayer";
 import { SiteFooter }   from "@/components/SiteFooter";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets:  ["latin"],
-  weight:   ["400", "700"],
-  variable: "--font-playfair",
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.suhaibkhan.in"),
   title: {
     default:  "Suhaib Khan",
     template: "%s · Suhaib Khan",
   },
   description:
     "Engineer, builder and systems thinker. Exploring AI, markets and how enduring things are made.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title:       "Suhaib Khan",
+    description: "Engineer, builder and systems thinker. Exploring AI, markets and how enduring things are made.",
+    siteName:    "Suhaib Khan",
+    url:         "https://www.suhaibkhan.in",
+    type:        "website",
+  },
+  twitter: {
+    card:        "summary_large_image",
+    title:       "Suhaib Khan",
+    description: "Engineer, builder and systems thinker. Exploring AI, markets and how enduring things are made.",
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${playfair.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
     >
       <body className="bg-background text-foreground font-body antialiased overflow-x-hidden">
 

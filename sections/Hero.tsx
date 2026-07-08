@@ -105,7 +105,8 @@ export function Hero() {
             <span
               className="leading-none text-muted/60 text-[1.25rem] sm:text-[1.75rem] lg:text-[2.25rem]"
               style={{
-                fontFamily: "var(--font-playfair)",
+                fontFamily: "Georgia, 'Times New Roman', ui-serif, serif",
+                fontStyle: "italic",
                 fontWeight: 700,
                 lineHeight: 1,
               }}
