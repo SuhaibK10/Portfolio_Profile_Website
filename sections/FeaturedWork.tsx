@@ -83,7 +83,7 @@ export function FeaturedWork() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <SectionHeading title="Projects" />
+          <SectionHeading title="Projects" align="center" />
         </motion.div>
 
         <motion.ul

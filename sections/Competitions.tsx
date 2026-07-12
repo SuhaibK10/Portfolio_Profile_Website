@@ -57,11 +57,11 @@ export function Competitions() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <SectionHeading title="Competitions & Hackathons" />
+          <SectionHeading title="Competitions & Hackathons" align="center" />
         </motion.div>
 
         {/* Cards */}
-        <div className="mt-14 max-w-2xl space-y-6">
+        <div className="mx-auto mt-14 max-w-2xl space-y-6">
           {COMPETITIONS.map((item, i) => (
             <motion.div
               key={item.title}
@@ -70,7 +70,7 @@ export function Competitions() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.65, delay: i * 0.08, ease: EASE }}
               className="group relative overflow-hidden rounded-xl border
-                         border-white/8 bg-card/60 px-6 py-5 backdrop-blur-sm
+                         border-white/8 bg-card/60 px-6 py-5 text-center backdrop-blur-sm
                          transition-colors duration-300 hover:border-white/16"
             >
               {/* Ambient gradient wash, brightens on hover */}
@@ -84,9 +84,9 @@ export function Competitions() {
               />
 
               {/* Trophy + title row */}
-              <div className="relative z-10 mb-3 flex items-start gap-3">
+              <div className="relative z-10 mb-3 flex flex-col items-center gap-3">
                 <span
-                  className="mt-0.5 flex h-8 w-8 shrink-0 items-center
+                  className="flex h-8 w-8 shrink-0 items-center
                              justify-center rounded-lg"
                   style={{ backgroundColor: `${ACCENT}1A` }}
                 >
@@ -105,13 +105,9 @@ export function Competitions() {
               </p>
 
               {/* Highlights */}
-              <ul className="relative z-10 mb-4 space-y-1.5">
+              <ul className="relative z-10 mb-4 space-y-2">
                 {item.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-2">
-                    <span
-                      className="mt-[0.35rem] h-1 w-1 shrink-0 rounded-full"
-                      style={{ backgroundColor: `${ACCENT}80` }}
-                    />
+                  <li key={h}>
                     <span className="font-body text-sm leading-relaxed
                                      text-foreground-secondary">
                       {h}
@@ -121,7 +117,7 @@ export function Competitions() {
               </ul>
 
               {/* Links */}
-              <div className="relative z-10 flex flex-wrap gap-3">
+              <div className="relative z-10 flex flex-wrap justify-center gap-3">
                 {item.links.map((link) => (
                   <a
                     key={link.label}

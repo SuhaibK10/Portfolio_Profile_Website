@@ -78,7 +78,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     blockquote: ({ children, ...props }: ComponentPropsWithoutRef<"blockquote">) => (
       <blockquote
         className="my-8 border-l-2 border-gold/50 pl-6 font-body text-[1.0625rem]
-                   italic leading-[1.9] text-foreground-secondary/80"
+                   leading-[1.9] text-foreground-secondary/80"
         {...props}
       >
         {children}
@@ -96,7 +96,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     em: ({ children, ...props }: ComponentPropsWithoutRef<"em">) => (
-      <em className="italic" {...props}>
+      <em className="not-italic" {...props}>
         {children}
       </em>
     ),

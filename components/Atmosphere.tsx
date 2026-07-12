@@ -68,12 +68,12 @@ export function Atmosphere() {
         />
       )}
 
-      {/* Layer 4 — Edge vignette, darkens outer 40 % */}
+      {/* Layer 4 — Edge vignette, subtle darkening only at the far corners */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 110% 80% at 50% 35%, transparent 45%, rgba(0,0,0,0.55) 100%)",
+            "radial-gradient(ellipse 115% 85% at 50% 35%, transparent 55%, rgba(0,0,0,0.32) 100%)",
         }}
       />
     </div>

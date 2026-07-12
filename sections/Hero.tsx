@@ -101,12 +101,11 @@ export function Hero() {
             {...fadeUp(0.52)}
             className="mt-6 flex items-baseline justify-center gap-2"
           >
-            {/* Static "I" — Playfair Display */}
+            {/* Static "I" */}
             <span
               className="leading-none text-muted/60 text-[1.25rem] sm:text-[1.75rem] lg:text-[2.25rem]"
               style={{
                 fontFamily: "Georgia, 'Times New Roman', ui-serif, serif",
-                fontStyle: "italic",
                 fontWeight: 700,
                 lineHeight: 1,
               }}

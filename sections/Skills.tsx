@@ -21,8 +21,17 @@ function PythonIcon() {
 function JavaScriptIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-      <rect width="24" height="24" fill="#F7DF1E"/>
-      <path fill="#000" d="M6.5 17.5c.55.88 1.3 1.5 2.6 1.5 1.1 0 1.8-.55 1.8-1.3 0-.9-.72-1.22-1.93-1.75l-.66-.28C6.58 15 5.4 14.08 5.4 12.1c0-1.84 1.4-3.24 3.59-3.24 1.56 0 2.68.54 3.49 1.96l-1.91 1.23c-.42-.75-.87-1.05-1.58-1.05-.72 0-1.18.46-1.18 1.05 0 .73.46 1.03 1.52 1.5l.66.28c2.13.92 3.3 1.86 3.3 3.96 0 2.27-1.78 3.41-4.17 3.41-2.34 0-3.85-1.12-4.59-2.58l1.97-1.13zm9.07-.22c.4.72.76 1.33 1.62 1.33.83 0 1.35-.33 1.35-1.6V9.3h2.27v7.73c0 2.64-1.55 3.84-3.8 3.84-2.04 0-3.22-1.05-3.82-2.32l2.38-1.27z"/>
+      <rect width="24" height="24" rx="4" fill="#F7DF1E"/>
+      <text
+        x="12" y="16.5"
+        textAnchor="middle"
+        fontFamily="Arial, sans-serif"
+        fontSize="10"
+        fontWeight="700"
+        fill="#000"
+      >
+        JS
+      </text>
     </svg>
   );
 }
@@ -208,8 +217,17 @@ function PostmanIcon() {
 function TypeScriptIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-      <rect width="24" height="24" rx="3" fill="#3178C6"/>
-      <path fill="#fff" d="M13.6 12.9H17v-1.8H9v1.8h3.4v9.1h1.2zM7.8 18.3c.3 1.7 1.7 2.8 3.7 2.8 2.1 0 3.6-1.1 3.6-2.9 0-1.6-1-2.4-2.7-3l-.7-.3c-.9-.3-1.3-.6-1.3-1.2 0-.5.4-.9 1.1-.9.7 0 1.1.3 1.4 1l1.5-.9c-.6-1.1-1.5-1.6-2.9-1.6-1.8 0-3 1.1-3 2.6 0 1.5.9 2.3 2.4 2.9l.7.3c1 .4 1.5.7 1.5 1.4 0 .6-.5 1-1.4 1-1 0-1.6-.5-2-1.3l-1.6.9z"/>
+      <rect width="24" height="24" rx="4" fill="#3178C6"/>
+      <text
+        x="12" y="16.5"
+        textAnchor="middle"
+        fontFamily="Arial, sans-serif"
+        fontSize="10"
+        fontWeight="700"
+        fill="#fff"
+      >
+        TS
+      </text>
     </svg>
   );
 }
