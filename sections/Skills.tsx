@@ -342,10 +342,11 @@ export function Skills() {
             eyebrow="Stack"
             title="Skills & Technologies"
             description="Technologies I work with across languages, frameworks, databases, and infrastructure."
+            align="center"
           />
         </motion.div>
 
-        <div className="mt-14 space-y-10">
+        <div className="mt-14 space-y-10 text-center">
           {CATEGORIES.map((cat) => (
             <div key={cat.label}>
 
@@ -359,23 +360,23 @@ export function Skills() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-40px" }}
-                className="flex flex-wrap gap-2.5"
+                className="flex flex-wrap justify-center gap-3"
               >
                 {cat.skills.map((skill) => (
                   <motion.div
                     key={skill.name}
                     variants={chipVariants}
-                    className="group flex items-center gap-2.5 rounded-lg
+                    className="group flex items-center gap-3 rounded-xl
                                border border-white/6 bg-card/60
-                               px-4 py-2.5 backdrop-blur-sm
+                               px-5 py-3.5 backdrop-blur-sm
                                transition-all duration-200
                                hover:border-white/14 hover:bg-card"
                   >
                     <span className="flex shrink-0 items-center justify-center
-                                     h-4.5 w-4.5">
+                                     h-5.5 w-5.5">
                       {skill.icon}
                     </span>
-                    <span className="font-body text-[0.8125rem] leading-none
+                    <span className="font-body text-sm leading-none
                                      text-foreground-secondary
                                      transition-colors duration-200
                                      group-hover:text-foreground">

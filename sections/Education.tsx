@@ -48,11 +48,11 @@ export function Education() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <SectionHeading title="Education" />
+          <SectionHeading title="Education" align="center" />
         </motion.div>
 
         {/* Cards */}
-        <div className="mt-14 max-w-2xl space-y-6">
+        <div className="mx-auto mt-14 max-w-2xl space-y-6">
           {EDUCATION.map((item, i) => (
             <motion.div
               key={item.degree}
@@ -61,30 +61,28 @@ export function Education() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.65, delay: i * 0.08, ease: EASE }}
               className="rounded-xl border border-white/8 bg-card/60
-                         px-6 py-5 backdrop-blur-sm"
+                         px-6 py-5 text-center backdrop-blur-sm"
             >
-              {/* Icon + degree/school row */}
-              <div className="mb-3 flex items-start justify-between gap-3">
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center
-                                   justify-center rounded-lg bg-gold/10">
-                    <GraduationCap size={16} className="text-gold" strokeWidth={1.8} />
-                  </span>
-                  <div>
-                    <h3 className="font-heading text-base font-semibold
-                                   leading-snug text-foreground md:text-lg">
-                      {item.degree}
-                    </h3>
-                    <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em]
-                                  uppercase text-gold/70">
-                      {item.school}
-                    </p>
-                  </div>
+              {/* Icon + degree/school */}
+              <div className="mb-3 flex flex-col items-center gap-3">
+                <span className="flex h-8 w-8 shrink-0 items-center
+                                 justify-center rounded-lg bg-gold/10">
+                  <GraduationCap size={16} className="text-gold" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <h3 className="font-heading text-base font-semibold
+                                 leading-snug text-foreground md:text-lg">
+                    {item.degree}
+                  </h3>
+                  <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em]
+                                uppercase text-gold/70">
+                    {item.school}
+                  </p>
+                  <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em]
+                                text-muted/70">
+                    {item.period}
+                  </p>
                 </div>
-                <p className="shrink-0 font-mono text-[0.6875rem] tracking-[0.12em]
-                              text-muted/70">
-                  {item.period}
-                </p>
               </div>
 
               {/* Coursework */}
@@ -92,7 +90,7 @@ export function Education() {
                             uppercase text-muted/60">
                 Relevant Coursework
               </p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
+              <div className="mt-2.5 flex flex-wrap justify-center gap-2">
                 {item.coursework.map((c) => (
                   <span
                     key={c}
