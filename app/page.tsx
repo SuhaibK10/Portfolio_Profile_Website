@@ -1,6 +1,5 @@
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
-import { Principles } from "@/sections/Principles";
 import { Exploring } from "@/sections/Exploring";
 import { Now } from "@/sections/Now";
 import { Journey } from "@/sections/Journey";
@@ -19,7 +18,6 @@ export default function Home() {
     <main>
       <Hero />
       <About />
-      <Principles />
       <Journey />
       <Education />
       <FeaturedWork />
