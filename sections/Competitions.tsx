@@ -10,7 +10,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const COMPETITIONS = [
   {
-    title:        "Winner — AMU Hackathon",
+    title:        "Winner, AMU Hackathon",
     description:
       "Developed a full-stack Digital Fuel Management System for the campus fuel station.",
     highlights: [
@@ -24,7 +24,7 @@ const COMPETITIONS = [
     ],
   },
   {
-    title:        "4th Place — Footprints on Mars, Tryst'23, IIT Delhi",
+    title:        "4th Place, Footprints on Mars, Tryst'23, IIT Delhi",
     description:
       "Proposed a Digital Twin simulation framework for Mars habitat management.",
     highlights: [
@@ -41,7 +41,7 @@ const COMPETITIONS = [
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
-const ACCENT = "#C9A85C";
+const ACCENT = "#A78BFA";
 
 /* ─── Component ─────────────────────────────────────────────────────── */
 

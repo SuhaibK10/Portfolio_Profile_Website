@@ -1,7 +1,6 @@
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Exploring } from "@/sections/Exploring";
-import { Now } from "@/sections/Now";
 import { Journey } from "@/sections/Journey";
 import { Education } from "@/sections/Education";
 import { Competitions } from "@/sections/Competitions";
@@ -25,7 +24,6 @@ export default function Home() {
       <Competitions />
       <Skills />
       <Exploring />
-      <Now />
       <Statement />
       <Writing />
       <BeyondCode />

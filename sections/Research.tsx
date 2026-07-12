@@ -14,7 +14,7 @@ const PAPERS = [
     venue:  "Indo Quantum Summit 2026",
     bullets: [
       "Abstract selected for presentation at Indo Quantum Summit 2026, aligned with India's ₹6,003 Crore National Quantum Mission.",
-      "Benchmarked QSVMs (ZZ/Pauli feature maps) against XGBoost, SVM, and Random Forest on NSE blue-chip portfolio data — achieved Sharpe ratio 1.48 vs. 1.20–1.42 for classical models, with 95% recall on 4 qubits at circuit depth 1, confirming NISQ-era feasibility.",
+      "Benchmarked QSVMs (ZZ/Pauli feature maps) against XGBoost, SVM, and Random Forest on NSE blue-chip portfolio data, achieving Sharpe ratio 1.48 vs. 1.20–1.42 for classical models, with 95% recall on 4 qubits at circuit depth 1, confirming NISQ-era feasibility.",
     ],
     links: [
       { label: "Abstract", href: "https://drive.google.com/file/d/1m_o9y58FxbDeAqkL1OvoUmzD3a9qK7kO/view?usp=share_link" },

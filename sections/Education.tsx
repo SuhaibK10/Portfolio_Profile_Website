@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
+import Image from "next/image";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -12,6 +12,7 @@ const EDUCATION = [
   {
     degree:     "Bachelor's in Computer Science",
     school:     "Aligarh Muslim University",
+    logo:       "/logos/amu.png",
     period:     "2022 – 2026",
     coursework: [
       "Parallel Computing",
@@ -65,9 +66,15 @@ export function Education() {
             >
               {/* Icon + degree/school */}
               <div className="mb-3 flex flex-col items-center gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center
-                                 justify-center rounded-lg bg-gold/10">
-                  <GraduationCap size={16} className="text-gold" strokeWidth={1.8} />
+                <span className="flex h-14 w-14 shrink-0 items-center
+                                 justify-center rounded-lg bg-white/90 p-1.5">
+                  <Image
+                    src={item.logo}
+                    alt={item.school}
+                    width={44}
+                    height={44}
+                    className="h-full w-full object-contain"
+                  />
                 </span>
                 <div>
                   <h3 className="font-heading text-base font-semibold

@@ -3,13 +3,13 @@
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 @theme inline {
   /* Colors */
-  --color-background:           #0D1117;
-  --color-card:                 #161B22;
-  --color-border:               #3D444D;
+  --color-background:           #141a24;
+  --color-card:                 #1c2330;
+  --color-border:               #454d59;
   --color-foreground:           #FFFFFF;
   --color-foreground-secondary: #DDE5EE;
   --color-muted:                #AEBBCE;
-  --color-gold:                 #C9A85C;
+  --color-gold:                 #A78BFA;
 
   /* Typography */
   --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  background-color:       #0D1117;
+  background-color:       #141a24;
   color:                  #FFFFFF;
   font-family:            var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -64,19 +64,19 @@ html.lenis body {
 
 /* ─── Selection ──────────────────────────────────────────────────── */
 ::selection {
-  background-color: rgb(201 168 92 / 0.18);
-  color: #C9A85C;
+  background-color: rgb(167 139 250 / 0.18);
+  color: #A78BFA;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: #0D1117; }
+::-webkit-scrollbar-track { background: #141a24; }
 ::-webkit-scrollbar-thumb { background: #30363D; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #8A9BB0; }
 
 /* ─── Focus Ring ─────────────────────────────────────────────────── */
 :focus-visible {
-  outline:        2px solid rgb(201 168 92 / 0.7);
+  outline:        2px solid rgb(167 139 250 / 0.7);
   outline-offset: 3px;
   border-radius:  4px;
   transition:     outline-color 0.15s ease;

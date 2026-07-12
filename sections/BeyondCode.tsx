@@ -62,7 +62,7 @@ const INTERESTS: Interest[] = [
     title: "Writing",
     description: "Clarity and leverage.",
     icon: <PenLine {...ICON_PROPS} />,
-    color: "#C9A85C",
+    color: "#A78BFA",
   },
   {
     title: "Coffee",

@@ -280,14 +280,14 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
       <motion.button
         onClick={() => setOpen((o) => !o)}
         whileTap={{ scale: 0.92 }}
-        aria-label={isPlaying ? "Ambient sound — playing, click to change or turn off" : "Ambient sound — off, click to turn on"}
+        aria-label={isPlaying ? "Ambient sound: playing, click to change or turn off" : "Ambient sound: off, click to turn on"}
         aria-expanded={open}
-        title={isPlaying ? "Ambient sound on — click to turn off" : "Ambient sound off — click to turn on"}
+        title={isPlaying ? "Ambient sound on, click to turn off" : "Ambient sound off, click to turn on"}
         className={`relative flex h-11 w-11 items-center justify-center rounded-full
                    border backdrop-blur-sm transition-all duration-300
                    ${
                      isPlaying
-                       ? "border-gold/50 bg-card/90 text-gold shadow-[0_0_20px_rgba(201,168,92,0.18)]"
+                       ? "border-gold/50 bg-card/90 text-gold shadow-[0_0_20px_rgba(167,139,250,0.18)]"
                        : "border-border/70 bg-card/90 text-foreground-secondary"
                    }
                    hover:border-gold/60 hover:text-gold`}

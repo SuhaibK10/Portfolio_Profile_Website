@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Suhaib Khan — Engineer, Researcher, Builder";
+export const alt = "Suhaib Khan: Engineer, Researcher, Builder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,7 +15,7 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0D1117",
+          backgroundColor: "#141a24",
           backgroundImage:
             "radial-gradient(ellipse 75% 90% at 50% 0%, rgba(99,102,241,0.28) 0%, transparent 70%)",
         }}
@@ -26,7 +26,7 @@ export default async function Image() {
             fontSize: 22,
             letterSpacing: 8,
             textTransform: "uppercase",
-            color: "#C9A85C",
+            color: "#A78BFA",
             marginBottom: 32,
           }}
         >

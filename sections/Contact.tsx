@@ -88,7 +88,7 @@ export function Contact() {
               variants={itemVariants}
               aria-label={
                 link.external
-                  ? `${link.platform} — opens in new tab`
+                  ? `${link.platform} (opens in new tab)`
                   : link.platform
               }
               className="group relative flex flex-col items-center rounded-xl p-5

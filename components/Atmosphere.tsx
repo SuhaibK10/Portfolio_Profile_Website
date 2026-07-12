@@ -34,24 +34,13 @@ export function Atmosphere() {
       aria-hidden
       className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden"
     >
-      {/* Layer 1 — Dot grid: 32 px cells, 1 px dots at 6.5 % white */}
+      {/* Layer 1 — Dot grid: 32 px cells, brighter dots for more presence */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.065) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
-        }}
-      />
-
-      {/* Layer 2 — Single indigo bloom from top-center.
-          One hue only — no competing sky-blue accent. */}
-      <div
-        className="absolute inset-x-0 -top-px"
-        style={{
-          height: 680,
-          background:
-            "radial-gradient(ellipse 75% 90% at 50% 0%, rgba(99,102,241,0.11) 0%, transparent 70%)",
         }}
       />
 
@@ -68,12 +57,12 @@ export function Atmosphere() {
         />
       )}
 
-      {/* Layer 4 — Edge vignette, subtle darkening only at the far corners */}
+      {/* Layer 4 — Edge vignette, lightened so corners don't feel heavy */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 115% 85% at 50% 35%, transparent 55%, rgba(0,0,0,0.32) 100%)",
+            "radial-gradient(ellipse 115% 85% at 50% 35%, transparent 60%, rgba(0,0,0,0.2) 100%)",
         }}
       />
     </div>

@@ -12,8 +12,8 @@ import { Card } from "@/components/Card";
 const PROJECTS = [
   {
     index:       "01",
-    title:       "VentureScope — Multi-Agent Startup Evaluator",
-    description: "CrewAI agents simulating a VC — Problem Validator → Market Researcher → Strategist → Moat Analyst → Memo Writer — with a weighted scoring engine across 5 dimensions and live Plotly radar + PDF export.",
+    title:       "VentureScope: Multi-Agent Startup Evaluator",
+    description: "CrewAI agents simulating a VC (Problem Validator → Market Researcher → Strategist → Moat Analyst → Memo Writer) with a weighted scoring engine across 5 dimensions and live Plotly radar + PDF export.",
     tag:         "Multi-Agent AI",
     gradient:    "rgba(99,102,241,0.12)",
     links: [
@@ -25,9 +25,9 @@ const PROJECTS = [
   {
     index:       "02",
     title:       "RBIH Mule Account Detection",
-    description: "LightGBM pipeline over 7.4M banking transactions with 31 behavioral features, covering all 12 RBI-defined AML patterns — 0.8572 AUC-ROC and 33× PR-AUC lift on a 99:1 imbalanced dataset.",
+    description: "LightGBM pipeline over 7.4M banking transactions with 31 behavioral features, covering all 12 RBI-defined AML patterns: 0.8572 AUC-ROC and 33× PR-AUC lift on a 99:1 imbalanced dataset.",
     tag:         "Explainable ML",
-    gradient:    "rgba(201,168,92,0.10)",
+    gradient:    "rgba(167,139,250,0.10)",
     links: [
       { label: "Live",   href: "https://muleaccountdetector.streamlit.app/" },
       { label: "GitHub", href: "https://github.com/SuhaibK10/Mule-Account-Detector" },

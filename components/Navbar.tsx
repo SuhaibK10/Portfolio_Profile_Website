@@ -24,7 +24,7 @@ export function Navbar() {
                    items-center
                    rounded-full border border-white/8
                    bg-background/85 px-4 backdrop-blur-xl
-                   shadow-[0_4px_32px_rgba(0,0,0,0.4),0_0_40px_rgba(201,168,92,0.18),0_0_80px_rgba(201,168,92,0.08)]"
+                   shadow-[0_4px_32px_rgba(0,0,0,0.4)]"
       >
         {/* Scroll progress — clipped to navbar pill */}
         <motion.div
