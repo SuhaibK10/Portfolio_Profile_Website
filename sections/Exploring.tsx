@@ -117,16 +117,12 @@ export function Exploring() {
                              rounded-xl border border-white/8
                              bg-card p-5 transition-all duration-300
                              hover:border-white/16 hover:shadow-lg"
-                  style={{
-                    background: `linear-gradient(145deg, color-mix(in srgb, ${card.accent} 8%, #161B22) 0%, #161B22 55%)`,
-                    boxShadow:  "0 0 0 0 transparent",
-                  }}
                 >
                   {/* Top accent bar */}
                   <div
                     className="absolute inset-x-0 top-0 h-0.5 rounded-t-xl
-                               opacity-70 transition-opacity duration-300 group-hover:opacity-100"
-                    style={{ background: card.accent }}
+                               opacity-40 transition-opacity duration-300 group-hover:opacity-60"
+                    style={{ background: `color-mix(in srgb, ${card.accent} 55%, #8992A3)` }}
                   />
 
                   {/* Icon */}
@@ -135,14 +131,13 @@ export function Exploring() {
                                justify-center rounded-xl transition-transform
                                duration-300 group-hover:scale-105"
                     style={{
-                      background: `color-mix(in srgb, ${card.accent} 14%, transparent)`,
-                      boxShadow:  `0 0 16px color-mix(in srgb, ${card.accent} 20%, transparent)`,
+                      background: `color-mix(in srgb, ${card.accent} 8%, transparent)`,
                     }}
                   >
                     <Icon
                       size={20}
                       strokeWidth={1.5}
-                      style={{ color: card.accent }}
+                      style={{ color: `color-mix(in srgb, ${card.accent} 65%, #9AA5B1)` }}
                       aria-hidden
                     />
                   </div>

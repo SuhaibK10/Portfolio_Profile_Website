@@ -11,7 +11,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const TIMELINE = [
   {
-    role:     "Founding Engineer",
+    role:     "Product Engineer",
     company:  "Louis Polo",
     link:     "http://www.louispolo.in/",
     logo:     "/louispolo.png",
@@ -120,7 +120,7 @@ function TimelineItem({
             <motion.div
               className="absolute left-0 top-0.5 h-2.5 w-2.5 rounded-full
                          border border-gold/30"
-              animate={{ scale: [1, 2.4], opacity: [0.55, 0] }}
+              animate={{ scale: [1, 1.6], opacity: [0.55, 0] }}
               transition={{
                 duration: 2.6,
                 repeat: Infinity,

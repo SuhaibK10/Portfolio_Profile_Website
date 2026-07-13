@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
@@ -16,6 +17,7 @@ const PROJECTS = [
     description: "CrewAI agents simulating a VC (Problem Validator → Market Researcher → Strategist → Moat Analyst → Memo Writer) with a weighted scoring engine across 5 dimensions and live Plotly radar + PDF export.",
     tag:         "Multi-Agent AI",
     gradient:    "rgba(99,102,241,0.12)",
+    image:       "/projects/venturescope.jpeg",
     links: [
       { label: "Live",   href: "https://startupideaevaluator.streamlit.app/" },
       { label: "GitHub", href: "https://github.com/SuhaibK10/Startup-Idea-Evaluator-using-CrewAI" },
@@ -28,6 +30,7 @@ const PROJECTS = [
     description: "LightGBM pipeline over 7.4M banking transactions with 31 behavioral features, covering all 12 RBI-defined AML patterns: 0.8572 AUC-ROC and 33× PR-AUC lift on a 99:1 imbalanced dataset.",
     tag:         "Explainable ML",
     gradient:    "rgba(167,139,250,0.10)",
+    image:       "/projects/mule-detector.jpeg",
     links: [
       { label: "Live",   href: "https://muleaccountdetector.streamlit.app/" },
       { label: "GitHub", href: "https://github.com/SuhaibK10/Mule-Account-Detector" },
@@ -109,6 +112,18 @@ export function FeaturedWork() {
                     background: `radial-gradient(circle at 90% -5%, ${p.gradient}, transparent 65%)`,
                   }}
                 />
+
+                {/* Thumbnail */}
+                {"image" in p && p.image && (
+                  <div className="relative w-full overflow-hidden aspect-2/1 border-b border-white/8">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                )}
 
                 <div className="relative z-10 flex flex-1 flex-col p-7 md:p-8">
 

@@ -18,7 +18,7 @@ export function MouseGlow() {
   const background = useTransform(
     [springX, springY],
     ([x, y]: number[]) =>
-      `radial-gradient(450px at ${x}px ${y}px, rgb(255 255 255 / 0.028), transparent 70%)`,
+      `radial-gradient(180px at ${x}px ${y}px, rgb(255 255 255 / 0.016), transparent 70%)`,
   );
 
   useEffect(() => {
