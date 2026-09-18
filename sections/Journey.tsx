@@ -11,14 +11,16 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const TIMELINE = [
   {
-    role:     "Product Engineer",
+    role:     "Founding Software Engineer",
     company:  "Louis Polo",
     link:     "http://www.louispolo.in/",
     logo:     "/louispolo.png",
-    period:   "Aug 2025 – May 2026",
+    period:   "Sep 2025 – Present",
     bullets: [
-      "Led end-to-end engineering for Louis Polo's launch as a consumer brand, transforming a 10+ year OEM manufacturer into a modern D2C brand.",
-      "Designed, developed, and deployed the company's production e-commerce platform, integrating authentication, payments, product management, media delivery, and cloud infrastructure.",
+      "Joined as Louis Polo's first technology hire, building the first production-ready e-commerce MVP that enabled the 10+ year OEM manufacturer's launch as a modern D2C brand, then converted to Founding Software Engineer to lead engineering full-time.",
+      "Architected and built a production-grade headless e-commerce platform using Next.js, React, TypeScript, and a custom CMS, integrating authentication, payments, product management, media delivery, and cloud infrastructure.",
+      "Designed the company's core business systems — ERP, CRM, and internal operational tooling — streamlining day-to-day operations.",
+      "Built an MCP exposing Clarity and analytics APIs as structured tool interfaces, powering agentic workflows for e-commerce sales reporting, marketplace performance analysis, and operational intelligence.",
     ],
   },
   {
