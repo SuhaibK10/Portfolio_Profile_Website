@@ -5,6 +5,7 @@ import { Journey } from "@/sections/Journey";
 import { Education } from "@/sections/Education";
 import { Competitions } from "@/sections/Competitions";
 import { Research } from "@/sections/Research";
+import { LeetCode } from "@/sections/LeetCode";
 import { Skills } from "@/sections/Skills";
 import { FeaturedWork } from "@/sections/FeaturedWork";
 import { Statement } from "@/sections/Statement";
@@ -22,6 +23,7 @@ export default function Home() {
       <FeaturedWork />
       <Research />
       <Competitions />
+      <LeetCode />
       <Skills />
       <Exploring />
       <Statement />

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, ArrowUpRight } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons/BrandIcons";
+import { GitHubIcon, LeetCodeIcon, LinkedInIcon } from "@/components/icons/BrandIcons";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 
@@ -182,6 +182,19 @@ export function Hero() {
             </Button>
 
             <Button
+              href="https://leetcode.com/u/Suhaibk911/"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="ghost"
+              size="md"
+              aria-label="LeetCode profile (opens in new tab)"
+            >
+              <LeetCodeIcon size={14} className="text-[#FFA116]" />
+              LeetCode
+              <ArrowUpRight size={11} className="opacity-35" />
+            </Button>
+
+            <Button
               href="https://github.com/SuhaibK10"
               target="_blank"
               rel="noopener noreferrer"
@@ -189,7 +202,7 @@ export function Hero() {
               size="md"
               aria-label="GitHub profile (opens in new tab)"
             >
-              <GitHubIcon size={14} />
+              <GitHubIcon size={14} className="text-white" />
               GitHub
               <ArrowUpRight size={11} className="opacity-35" />
             </Button>
@@ -202,7 +215,7 @@ export function Hero() {
               size="md"
               aria-label="LinkedIn profile (opens in new tab)"
             >
-              <LinkedInIcon size={14} />
+              <LinkedInIcon size={14} className="text-[#0A66C2]" />
               LinkedIn
               <ArrowUpRight size={11} className="opacity-35" />
             </Button>
