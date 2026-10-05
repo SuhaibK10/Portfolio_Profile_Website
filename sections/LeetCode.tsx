@@ -1,8 +1,9 @@
-import { ArrowUpRight, Code } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedReveal } from "@/components/AnimatedReveal";
+import { LeetCodeIcon } from "@/components/icons/BrandIcons";
 import { getLeetCodeStats } from "@/lib/leetcode";
 
 const ACCENT = "#A78BFA";
@@ -80,9 +81,9 @@ export async function LeetCode() {
                 <div className="flex items-center gap-3">
                   <span
                     className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
-                    style={{ backgroundColor: `${ACCENT}1A` }}
+                    style={{ backgroundColor: "#FFA1161A" }}
                   >
-                    <Code size={16} style={{ color: ACCENT }} strokeWidth={1.8} />
+                    <LeetCodeIcon size={16} className="text-[#FFA116]" />
                   </span>
                   <div>
                     <h3 className="font-heading text-base font-semibold leading-snug text-foreground">

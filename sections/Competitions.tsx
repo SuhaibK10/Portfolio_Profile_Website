@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -42,8 +42,33 @@ const COMPETITIONS = [
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 const ACCENT = "#A78BFA";
+const GOLD = "#FBBF24";
 
 /* ─── Component ─────────────────────────────────────────────────────── */
+
+function GoldTrophy({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden>
+      <defs>
+        <linearGradient id="trophy-gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#FDE68A" />
+          <stop offset="0.5" stopColor={GOLD} />
+          <stop offset="1" stopColor="#B45309" />
+        </linearGradient>
+      </defs>
+      <path d="M7 3.5h10v5.5a5 5 0 0 1-10 0z" fill="url(#trophy-gold)" />
+      <path
+        d="M7 5H4.2v1.4a3.3 3.3 0 0 0 3 3.3M17 5h2.8v1.4a3.3 3.3 0 0 1-3 3.3"
+        fill="none"
+        stroke="url(#trophy-gold)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <rect x="10.8" y="14" width="2.4" height="3" fill="url(#trophy-gold)" />
+      <rect x="7.5" y="17" width="9" height="3" rx="1" fill="url(#trophy-gold)" />
+    </svg>
+  );
+}
 
 export function Competitions() {
   return (
@@ -88,9 +113,9 @@ export function Competitions() {
                 <span
                   className="flex h-8 w-8 shrink-0 items-center
                              justify-center rounded-lg"
-                  style={{ backgroundColor: `${ACCENT}1A` }}
+                  style={{ backgroundColor: `${GOLD}1A` }}
                 >
-                  <Trophy size={16} style={{ color: ACCENT }} strokeWidth={1.8} />
+                  <GoldTrophy />
                 </span>
                 <h3 className="font-heading text-base font-semibold
                                leading-snug text-foreground md:text-lg">
