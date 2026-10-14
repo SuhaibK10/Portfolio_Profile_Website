@@ -83,7 +83,7 @@ export function Hero() {
             className="mt-3 font-mono text-[0.75rem] uppercase tracking-[0.22em]"
             style={{ color: "#a8b8cc" }}
           >
-            Engineer. Researcher. Builder.
+            Thinker. Researcher. Engineer.
           </motion.p>
 
           {/* Headline */}
