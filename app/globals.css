@@ -133,3 +133,13 @@ html.lenis body {
     scroll-behavior:          auto   !important;
   }
 }
+
+/* ─── Hero network (Three.js) ────────────────────────────────────── */
+.hero-network {
+  opacity: 0;
+  transition: opacity 1.6s ease 0.9s;
+  /* soften edges and keep the very centre calmer behind the headline */
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 48%, #000 45%, transparent 88%);
+          mask-image: radial-gradient(ellipse 75% 70% at 50% 48%, #000 45%, transparent 88%);
+}
+.hero-network[data-ready] { opacity: 1; }
