@@ -2,15 +2,11 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, ArrowUpRight } from "lucide-react";
 import { GitHubIcon, LeetCodeIcon, LinkedInIcon } from "@/components/icons/BrandIcons";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
-
-// Three.js is client-only and loaded after first paint so it never delays the hero text
-const HeroNetwork = dynamic(() => import("@/components/HeroNetwork"), { ssr: false });
 
 /* ─── Content ─────────────────────────────────────────────────────── */
 
@@ -52,11 +48,8 @@ export function Hero() {
       className="relative flex min-h-screen flex-col"
     >
 
-      {/* ── 3D network backdrop ─────────────────────────────────────── */}
-      <HeroNetwork />
-
       {/* ── Centered block ─────────────────────────────────────────── */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center
+      <div className="flex flex-1 flex-col items-center justify-center
                       px-6 py-24 text-center">
         <Container size="lg">
 
@@ -232,7 +225,7 @@ export function Hero() {
       </div>
 
       {/* ── Manifesto strip ────────────────────────────────────────── */}
-      <div className="relative z-10 px-6 pb-14" aria-hidden>
+      <div className="px-6 pb-14" aria-hidden>
         <Container size="lg">
           <motion.div
             initial={{ opacity: 0 }}
