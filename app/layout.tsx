@@ -8,6 +8,7 @@ import { Atmosphere }   from "@/components/Atmosphere";
 import { MouseGlow }    from "@/components/MouseGlow";
 import { Navbar }       from "@/components/Navbar";
 import { AmbientPlayer } from "@/components/AmbientPlayer";
+import { VisitorCounter } from "@/components/VisitorCounter";
 import { SiteFooter }   from "@/components/SiteFooter";
 import "./globals.css";
 
@@ -65,6 +66,9 @@ export default function RootLayout({
 
             {/* z 50   ambient player — fixed bottom-right */}
             <AmbientPlayer className="fixed bottom-5 right-5 z-50" />
+
+            {/* z 50   visitor counter — fixed bottom-left */}
+            <VisitorCounter />
 
             <div id="main-content">
               {children}
