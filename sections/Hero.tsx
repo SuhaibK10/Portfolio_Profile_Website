@@ -169,7 +169,7 @@ export function Hero() {
             className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
             <Button
-              href="https://drive.google.com/file/d/1jTalKKokW6cevhf4yPwP6muoIpdCeOAO/view?usp=sharing"
+              href="https://drive.google.com/file/d/1sriA87yXDd3dXjHPSNRypUDvKgNGSE6B/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               variant="ghost"
