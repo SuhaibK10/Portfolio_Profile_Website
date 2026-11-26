@@ -11,27 +11,16 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const TIMELINE = [
   {
-    role:     "Founding Software Engineer",
+    role:     "Software Development Engineer I (SDE-1)",
     company:  "Louis Polo",
     link:     "http://www.louispolo.in/",
     logo:     "/louispolo.png",
-    period:   "Sep 2025 – Present",
+    period:   "May 2026 – Present",
     bullets: [
-      "Joined as Louis Polo's first technology hire, building the first production-ready e-commerce MVP that enabled the 10+ year OEM manufacturer's launch as a modern D2C brand, then converted to Founding Software Engineer to lead engineering full-time.",
-      "Architected and built a production-grade headless e-commerce platform using Next.js, React, TypeScript, and a custom CMS, integrating authentication, payments, product management, media delivery, and cloud infrastructure.",
-      "Designed the company's core business systems — ERP, CRM, and internal operational tooling — streamlining day-to-day operations.",
-      "Built an MCP exposing Clarity and analytics APIs as structured tool interfaces, powering agentic workflows for e-commerce sales reporting, marketplace performance analysis, and operational intelligence.",
-    ],
-  },
-  {
-    role:     "ML & Research Head",
-    company:  "Faast FinTech Club",
-    link:     "http://www.amufaast.com/",
-    logo:     "/faast.png",
-    period:   "Sep 2025 – Present",
-    bullets: [
-      "Led the ML & Research vertical at FAAST, establishing quantitative finance and algorithmic trading as a core research pillar from the ground up.",
-      "Conducted workshops on quantitative strategy development (SMA, EMA, MACD, ADX, Parabolic SAR) alongside historical backtesting, walk-forward analysis, and Monte Carlo simulation.",
+      "First engineering hire at the 10+ year OEM luggage manufacturer; work directly with the CEO and COO to turn business priorities into shipped software, owning implementation from idea to production.",
+      "Built a sales analytics platform unifying 4 marketplaces with different selling models (Amazon, Myntra, Flipkart, Ajio) to compare channels and cut returns, plus MCP tooling exposing those APIs so AI agents automate sales reporting.",
+      "Built the internal web-based ERP (inventory, CRM, operations) across data model, REST APIs, and UI, used daily by sales, marketing, and operations.",
+      "Set up a Playwright and Vitest test framework (unit, API, accessibility) running in GitHub Actions CI on every pull request before production.",
     ],
   },
   {
@@ -39,10 +28,21 @@ const TIMELINE = [
     company:  "IIT Jammu",
     link:     null,
     logo:     "/iitjammu.png",
-    period:   "Jun 2025 – Jul 2025",
+    period:   "Jun 2025 – Aug 2025",
     bullets: [
       "Implemented BERT-based transformer and LSTM/Seq2Seq encoder-decoder architectures across applied NLP workflows, evaluating model performance in real-world settings.",
       "Developed LLM-powered agentic workflows using CrewAI and the OpenAI Agents SDK, implementing multi-agent orchestration, tool calling, planning, and autonomous task execution.",
+    ],
+  },
+  {
+    role:     "Machine Learning & Research Lead",
+    company:  "Faast FinTech Club",
+    link:     "http://www.amufaast.com/",
+    logo:     "/faast.png",
+    period:   "Nov 2025 – Jul 2026",
+    bullets: [
+      "Led the club's ML and research team building applied ML projects in credit risk, fraud detection, and quantitative modeling.",
+      "Conducted hands-on workshops on Python trading-strategy development, backtesting, walk-forward analysis, and Monte Carlo simulation.",
     ],
   },
   {

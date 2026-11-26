@@ -2,7 +2,7 @@
 
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
-import { Terminal, Lock, Cpu } from "lucide-react";
+import { Terminal, Lock, Cpu, Database, GitBranch, Network, Scale, Workflow, Plug, GitMerge, Cloud, ScanText } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -240,6 +240,64 @@ function OpenAIIcon() {
   );
 }
 
+function PandasIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
+      <circle cx="9" cy="12" r="7" fill="#150458" />
+      <circle cx="15" cy="12" r="7" fill="#E70488" fillOpacity="0.85" />
+      <circle cx="9" cy="12" r="2.2" fill="#fff" />
+      <circle cx="15" cy="12" r="2.2" fill="#fff" />
+    </svg>
+  );
+}
+
+function NumPyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
+      <path stroke="#4DABCF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" d="M3 8l4.5 4-4.5 4" />
+      <path stroke="#013243" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" d="M10.5 8l4.5 4-4.5 4" />
+      <path stroke="#4DABCF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" d="M18 8l3 4-3 4" />
+    </svg>
+  );
+}
+
+function FastAPIIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
+      <circle cx="12" cy="12" r="10" fill="#009688" />
+      <path fill="#fff" d="M13 3.5L5 13h5.5l-1 7.5L17 11h-5.5z" />
+    </svg>
+  );
+}
+
+function StreamlitIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
+      <circle cx="12" cy="12" r="10" fill="#FF4B4B" fillOpacity="0.15" />
+      <path stroke="#FF4B4B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" d="M6 16l5-9 2 4.5 5-3.5-4 8-2-4-3 6z" />
+    </svg>
+  );
+}
+
+function PlaywrightIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
+      <circle cx="12" cy="12" r="9" stroke="#2EAD33" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="3.2" fill="#2EAD33" />
+      <path stroke="#2EAD33" strokeWidth="1.6" strokeLinecap="round" d="M12 3v3.5M12 17.5V21M3 12h3.5M17.5 12H21" />
+    </svg>
+  );
+}
+
+function VitestIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
+      <path fill="#FCC72B" d="M13 2L4 14h6l-1 8 10-14h-6z" opacity="0.9" />
+      <path fill="#729B1B" d="M13 2L9 9h5l-1 5 6-8h-5z" opacity="0.85" />
+    </svg>
+  );
+}
+
 /* ─── Skill data ────────────────────────────────────────────────── */
 
 interface Skill  { name: string; icon: ReactNode; color: string }
@@ -257,19 +315,32 @@ const CATEGORIES: Category[] = [
       { name: "TypeScript", icon: <TypeScriptIcon />,        color: "#3178C6" },
       { name: "JavaScript", icon: <JavaScriptIcon />,        color: "#F7DF1E" },
       { name: "Java",       icon: <JavaIcon />,              color: "#ED8B00" },
+      { name: "SQL",        icon: L(Database, "#64748B"),    color: "#64748B" },
       { name: "C",          icon: L(Cpu, "#A8B9CC"),         color: "#A8B9CC" },
       { name: "Shell",      icon: L(Terminal, "#89E051"),    color: "#89E051" },
     ],
   },
   {
-    label: "Frameworks & Libraries",
+    label: "Machine Learning",
+    skills: [
+      { name: "Scikit-learn", icon: <ScikitlearnIcon />,      color: "#F7931E" },
+      { name: "PyTorch",      icon: <PyTorchIcon />,          color: "#EE4C2C" },
+      { name: "Hugging Face", icon: <HuggingFaceIcon />,      color: "#FFD21E" },
+      { name: "XGBoost",      icon: L(GitBranch, "#EB5E28"),  color: "#EB5E28" },
+      { name: "LightGBM",     icon: L(Network, "#4A90D9"),    color: "#4A90D9" },
+      { name: "SHAP",         icon: L(Scale, "#FF0D57"),      color: "#FF0D57" },
+      { name: "Pandas",       icon: <PandasIcon />,           color: "#E70488" },
+      { name: "NumPy",        icon: <NumPyIcon />,            color: "#4DABCF" },
+    ],
+  },
+  {
+    label: "Web & Frameworks",
     skills: [
       { name: "React",        icon: <ReactIcon />,           color: "#61DAFB" },
       { name: "Next.js",      icon: <NextJsIcon />,          color: "#ffffff" },
       { name: "Tailwind CSS", icon: <TailwindIcon />,        color: "#06B6D4" },
-      { name: "PyTorch",      icon: <PyTorchIcon />,         color: "#EE4C2C" },
-      { name: "Scikit-learn", icon: <ScikitlearnIcon />,     color: "#F7931E" },
-      { name: "Hugging Face", icon: <HuggingFaceIcon />,     color: "#FFD21E" },
+      { name: "FastAPI",      icon: <FastAPIIcon />,         color: "#009688" },
+      { name: "Streamlit",    icon: <StreamlitIcon />,       color: "#FF4B4B" },
     ],
   },
   {
@@ -284,20 +355,27 @@ const CATEGORIES: Category[] = [
   {
     label: "AI & Automation",
     skills: [
-      { name: "CrewAI",           icon: <CrewAIIcon />, color: "#7C3AED" },
-      { name: "OpenAI Agents SDK", icon: <OpenAIIcon />, color: "#ffffff" },
-      { name: "n8n",              icon: <N8NIcon />,    color: "#EA4B71" },
+      { name: "CrewAI",                  icon: <CrewAIIcon />,          color: "#7C3AED" },
+      { name: "OpenAI Agents SDK",       icon: <OpenAIIcon />,          color: "#ffffff" },
+      { name: "LangGraph",               icon: L(Workflow, "#3AAFA9"),  color: "#3AAFA9" },
+      { name: "Model Context Protocol",  icon: L(Plug, "#D4D4D8"),      color: "#D4D4D8" },
+      { name: "n8n",                     icon: <N8NIcon />,             color: "#EA4B71" },
     ],
   },
   {
     label: "Tools",
     skills: [
-      { name: "Docker",   icon: <DockerIcon />,                        color: "#2496ED" },
-      { name: "Git",      icon: <GitIcon />,                           color: "#F05032" },
-      { name: "GitHub",   icon: <GitHubIcon />,                        color: "#ffffff" },
-      { name: "Postman",  icon: <PostmanIcon />,                       color: "#FF6C37" },
-      { name: "Vercel",   icon: <VercelIcon />,                        color: "#ffffff" },
-      { name: "Clerk",    icon: L(Lock, "#6C47FF"),                    color: "#6C47FF" },
+      { name: "Docker",         icon: <DockerIcon />,                color: "#2496ED" },
+      { name: "Git",            icon: <GitIcon />,                   color: "#F05032" },
+      { name: "GitHub",         icon: <GitHubIcon />,                color: "#ffffff" },
+      { name: "GitHub Actions", icon: L(GitMerge, "#2088FF"),        color: "#2088FF" },
+      { name: "Playwright",     icon: <PlaywrightIcon />,            color: "#2EAD33" },
+      { name: "Vitest",         icon: <VitestIcon />,                color: "#FCC72B" },
+      { name: "Postman",        icon: <PostmanIcon />,               color: "#FF6C37" },
+      { name: "Vercel",         icon: <VercelIcon />,                color: "#ffffff" },
+      { name: "Render",         icon: L(Cloud, "#46E3B7"),           color: "#46E3B7" },
+      { name: "Tesseract OCR",  icon: L(ScanText, "#9CA3AF"),        color: "#9CA3AF" },
+      { name: "Clerk",          icon: L(Lock, "#6C47FF"),            color: "#6C47FF" },
     ],
   },
   {
@@ -341,7 +419,7 @@ export function Skills() {
           <SectionHeading
             eyebrow="Stack"
             title="Skills & Technologies"
-            description="Technologies I work with across languages, frameworks, databases, and infrastructure."
+            description="Technologies I work with across languages, machine learning, web, databases, and infrastructure."
             align="center"
           />
         </motion.div>

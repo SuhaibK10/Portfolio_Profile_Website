@@ -49,6 +49,14 @@ const PROJECTS = [
   },
   {
     index:       "04",
+    title:       "Sovereign On-Premise Agentic AI",
+    description: "On-premise multi-agent system for confidential industrial documents (Smart India Hackathon 2026, problem SIH26117, MRPL) built with LangGraph and open-weight multimodal LLMs, so data never leaves the client's servers.",
+    tag:         "Agentic AI",
+    gradient:    "rgba(59,130,246,0.10)",
+    links: [],
+  },
+  {
+    index:       "05",
     title:       "Addictive Learning",
     description: "Real-time competitive quiz game where two players race to answer AI-generated questions, best of 7 wins.",
     tag:         "Full-Stack AI",
