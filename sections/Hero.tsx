@@ -181,6 +181,7 @@ export function Hero() {
               <ArrowUpRight size={11} className="opacity-35" />
             </Button>
 
+            {/* LeetCode temporarily hidden
             <Button
               href="https://leetcode.com/u/Suhaibk911/"
               target="_blank"
@@ -193,6 +194,7 @@ export function Hero() {
               LeetCode
               <ArrowUpRight size={11} className="opacity-35" />
             </Button>
+            */}
 
             <Button
               href="https://github.com/SuhaibK10"

@@ -24,7 +24,7 @@ export default function Home() {
       <FeaturedWork />
       <Research />
       <Competitions />
-      <LeetCode />
+      {/* <LeetCode /> temporarily hidden */}
       <GitHub />
       <Skills />
       <Exploring />
